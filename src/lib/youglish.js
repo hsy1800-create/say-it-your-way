@@ -21,7 +21,7 @@ function loadYG() {
 }
 
 export function youglishQuery(text) {
-  return speakable(text).replace(/[,.!?]+$/g, '').replace(/^,\s*/, '').trim();
+  return speakable(text).replace(/[,.!?…]+$/g, '').replace(/^,\s*/, '').trim();
 }
 
 let seq = 0;

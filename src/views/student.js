@@ -284,7 +284,7 @@ export function renderStudent(app) {
           }, label))) : null),
       line,
       h('div', { class: 'row' },
-        h('button', { class: 'btn small', type: 'button', onclick: () => speak(frame) }, icon('speaker', 16), '틀 듣기'),
+        h('button', { class: 'btn small', type: 'button', onclick: () => speak(applyGender(frame, state.gender)) }, icon('speaker', 16), '틀 듣기'),
         h('button', {
           class: 'btn small ghost', type: 'button',
           onclick: () => { state.free = currentSentence(); renderFrame(); queueSave(); ui.freeArea?.focus(); },

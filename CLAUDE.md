@@ -17,6 +17,7 @@
 - 배포: GitHub Actions → GitHub Pages. main에 push하면 자동 배포된다.
 - 내용: `src/data/books.json`(차시별 모델 책 문장, 쪽별 생각 질문, 문장틀), `src/data/words.json`(낱말 사전), `src/data/phrases.json`(표현사전). 지도안의 6쪽 설계 표, 쪽별 생각 질문, 아이들이 막힐 말 표에서 만든다.
 - 모델 책 그림: `public/books/lesson{2-8}/{cover,p1,p2,p3,p4,p5,p6,back}.webp` 56장이 들어 있다(GPT로 만든 1024×1536 PNG를 768×1152 WebP로 줄임). `.webp`가 없으면 같은 이름의 `.png`를 찾고, 그것도 없으면 그림 자리를 보여 준다. 마스코트는 `public/art/mascot.webp`.
+- 소리: 고정된 글(모델 책 문장, 책 속 낱말, 문장틀, 덩어리, words.json, phrases.json)은 Kokoro(af_heart, 미국 영어, speed 0.9)로 미리 만든 mp3(`public/audio/`, 목록 `src/data/audio.json`)를 튼다. 데이터가 바뀌면 `node scripts/audio-list.mjs` 후 `python3 scripts/make-audio.py <onnx> <voices.bin>`(모델은 github.com/thewh1teagle/kokoro-onnx releases)로 빠진 파일만 만든다. 파일이 없는 글은 브라우저의 영어 목소리로만 읽고, 영어 목소리가 없으면 한국어 목소리로 읽지 말고 안내만 한다(선생님이 콩글리시를 싫어함). 읽을 글 다듬기 규칙은 `src/lib/speech-text.js` 하나로 앱과 스크립트가 함께 쓴다.
 - 2단계: Firebase 무료 요금제(Spark). 익명 로그인 + 교사 로그인, Firestore 실시간.
 - 3단계: Cloud Functions for Firebase → Claude API. Blaze 요금제가 필요하다.
 
@@ -24,7 +25,7 @@
 
 지금 상태: 1단계와 2단계는 만들어져 있다(`src/`). Firebase 프로젝트 `say-it-your-way`(Spark, Firestore 서울 asia-northeast3, 익명+Google 로그인, 승인 도메인 hsy1800-create.github.io)에 연결되어 `src/firebase-config.js`에 설정값이 들어 있다. 설정값을 `null`로 두면 체험 모드(같은 컴퓨터의 탭끼리 연결)로 돈다. `firestore.rules`를 바꾸면 콘솔 규칙 탭에도 게시해야 한다. 남은 것은 3단계 AI다.
 
-1. **1단계 · 바로 쓰는 앱(서버 없음)**: 펼친 모델 책, 정해진 문장 빈칸 쓰기, 낱말 찾기, 듣기(speechSynthesis), 혼자 말해보기, 문장 키우기, 유글리시(교사 화면 먼저).
+1. **1단계 · 바로 쓰는 앱(서버 없음)**: 펼친 모델 책, 정해진 문장 빈칸 쓰기, 낱말 찾기, 듣기(원어민 소리 파일 + 브라우저 영어 목소리), 혼자 말해보기, 문장 키우기, 유글리시(교사 화면 먼저).
 2. **2단계 · 교실 연결**: 반 코드 입장, 문장·검색 실시간 관전판, “이렇게도 말해요” 카드, 못 찾은 말 모음, 문장 벽, 책 사진 올리기, Firestore 보안 규칙. 시작 전에 선생님에게 Firebase 웹 설정값을 받는다.
 3. **3단계 · AI**: 원어민처럼 말하기. 시작 전에 선생님이 학교 지침 확인, Blaze 전환, API 키 발급을 마쳤는지 묻는다.
 

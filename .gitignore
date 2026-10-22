@@ -2,3 +2,4 @@ node_modules
 dist
 dist-preview
 .DS_Store
+scripts/audio-todo.json

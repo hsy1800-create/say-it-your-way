@@ -1,0 +1,863 @@
+[
+ {
+  "lesson": 2,
+  "title": "Let Me Introduce My ___",
+  "titleKo": "나의 소중한 사람",
+  "chunks": [
+   "This is my ___.",
+   "He(She) is ___.",
+   "We always ___ together.",
+   "When I'm ___, he(she) ___."
+  ],
+  "modelBook": [
+   {
+    "key": "cover",
+    "image": "books/lesson2/cover.webp",
+    "en": "Let Me Introduce My Grandma",
+    "ko": "우리 할머니를 소개할게요"
+   },
+   {
+    "key": "p1",
+    "image": "books/lesson2/p1.webp",
+    "en": "This is my grandma. She lives near the sea.",
+    "ko": "우리 할머니예요. 할머니는 바닷가 근처에 사세요."
+   },
+   {
+    "key": "p2",
+    "image": "books/lesson2/p2.webp",
+    "en": "She looks small, but she is super strong. She carries big bags of rice!",
+    "ko": "할머니는 작아 보이지만 엄청 힘이 세요. 커다란 쌀 포대도 번쩍 드세요!"
+   },
+   {
+    "key": "p3",
+    "image": "books/lesson2/p3.webp",
+    "en": "She likes flowers, especially roses. Her garden is full of them.",
+    "ko": "할머니는 꽃을, 특히 장미를 좋아하세요. 할머니 정원은 장미로 가득해요."
+   },
+   {
+    "key": "p4",
+    "image": "books/lesson2/p4.webp",
+    "en": "We always watch dramas together. She cries every time!",
+    "ko": "우리는 늘 같이 드라마를 봐요. 할머니는 볼 때마다 우세요!"
+   },
+   {
+    "key": "p5",
+    "image": "books/lesson2/p5.webp",
+    "en": "When I'm sick, she makes me rice porridge.",
+    "ko": "내가 아플 때 할머니는 죽을 끓여 주세요."
+   },
+   {
+    "key": "p6",
+    "image": "books/lesson2/p6.webp",
+    "en": "I want to say, \"Thank you, Grandma. I love you.\"",
+    "ko": "“고마워요, 할머니. 사랑해요.”라고 말하고 싶어요."
+   },
+   {
+    "key": "back",
+    "image": "books/lesson2/back.webp",
+    "en": "Who is YOUR special person?",
+    "ko": "여러분의 소중한 사람은 누구인가요?"
+   }
+  ],
+  "pages": [
+   {
+    "page": 1,
+    "q": "누구야? 나랑 어떤 사이야?",
+    "qEn": "Who is it?",
+    "frames": {
+     "1": "This is my ___{누구}.",
+     "2": "This is my ___{누구}. He(She) lives near ___{어디 근처}.",
+     "3": "This is my ___{누구}. He(She) lives near ___{어디 근처}, and he(she) is ___{어떤 사람}."
+    }
+   },
+   {
+    "page": 2,
+    "q": "겉으로 보면 어떤 사람 같아? 그런데 사실은?",
+    "qEn": "What does he(she) look like? What is he(she) really like?",
+    "frames": {
+     "1": "He(She) is ___{어떤 모습}.",
+     "2": "He(She) looks ___{겉모습}, but he(she) is super ___{진짜 모습}.",
+     "3": "He(She) looks ___{겉모습}, but he(she) is super ___{진짜 모습}. He(She) ___{그걸 보여 주는 일}!"
+    }
+   },
+   {
+    "page": 3,
+    "q": "그 사람이 정말 좋아하는 건 뭐야? 그중에서도 특히?",
+    "qEn": "What does he(she) love?",
+    "frames": {
+     "1": "He(She) likes ___{좋아하는 것}.",
+     "2": "He(She) likes ___{좋아하는 것}, especially ___{그중에서도 특히}.",
+     "3": "He(She) likes ___{좋아하는 것}, especially ___{그중에서도 특히}, because ___{까닭}."
+    }
+   },
+   {
+    "page": 4,
+    "q": "둘이 자주 같이 하는 게 뭐야?",
+    "qEn": "What do you do together?",
+    "frames": {
+     "1": "We ___{같이 하는 일} together.",
+     "2": "We always ___{같이 하는 일} together. He(She) ___{그때 하는 행동} every time!",
+     "3": "We always ___{같이 하는 일} together. He(She) ___{그때 하는 행동} every time, and I ___{나는}!"
+    }
+   },
+   {
+    "page": 5,
+    "q": "내가 힘들거나 아플 때 그 사람은 뭘 해줘?",
+    "qEn": "What does he(she) do for you?",
+    "frames": {
+     "1": "He(She) ___{해 주는 일} for me.",
+     "2": "When I'm ___{내 상태}, he(she) ___{해 주는 일}.",
+     "3": "When I'm ___{내 상태}, he(she) ___{해 주는 일}. I love it when he(she) ___{좋은 순간}."
+    }
+   },
+   {
+    "page": 6,
+    "q": "그 사람한테 꼭 하고 싶은 말은?",
+    "qEn": "What do you want to say to him(her)?",
+    "frames": {
+     "1": "Thank you, ___{누구}!",
+     "2": "I want to say, \"Thank you, ___{누구}. I love you.\"",
+     "3": "I want to say, \"___{하고 싶은 말},\" because ___{까닭}."
+    }
+   }
+  ]
+ },
+ {
+  "lesson": 3,
+  "title": "Not Just \"I Like ___\"",
+  "titleKo": "좋아하는 것을 끝까지 말하기",
+  "chunks": [
+   "I like ___ because ___.",
+   "The best part is ___.",
+   "When I ___, I feel ___.",
+   "It reminds me of ___."
+  ],
+  "modelBook": [
+   {
+    "key": "cover",
+    "image": "books/lesson3/cover.webp",
+    "en": "Not Just \"I Like Tteokbokki\"",
+    "ko": "그냥 “떡볶이 좋아”가 아니야"
+   },
+   {
+    "key": "p1",
+    "image": "books/lesson3/p1.webp",
+    "en": "This is my favorite food: tteokbokki.",
+    "ko": "이건 내가 제일 좋아하는 음식, 떡볶이예요."
+   },
+   {
+    "key": "p2",
+    "image": "books/lesson3/p2.webp",
+    "en": "It's red, spicy, and a little sweet.",
+    "ko": "빨갛고, 맵고, 조금 달아요."
+   },
+   {
+    "key": "p3",
+    "image": "books/lesson3/p3.webp",
+    "en": "The best part is the fish cake. It's soft and chewy.",
+    "ko": "제일 좋은 부분은 어묵이에요. 부드럽고 쫄깃해요."
+   },
+   {
+    "key": "p4",
+    "image": "books/lesson3/p4.webp",
+    "en": "When I eat it on a cold day, I feel warm inside.",
+    "ko": "추운 날 먹으면 속까지 따뜻해져요."
+   },
+   {
+    "key": "p5",
+    "image": "books/lesson3/p5.webp",
+    "en": "It reminds me of my school days. My friends and I ate it after school every day.",
+    "ko": "학교 다닐 때가 생각나요. 친구들이랑 방과 후에 매일 먹었거든요."
+   },
+   {
+    "key": "p6",
+    "image": "books/lesson3/p6.webp",
+    "en": "But be careful! It's really spicy. Drink some milk!",
+    "ko": "그런데 조심해요! 정말 매워요. 우유를 마셔요!"
+   },
+   {
+    "key": "back",
+    "image": "books/lesson3/back.webp",
+    "en": "What's YOUR favorite snack?",
+    "ko": "여러분이 제일 좋아하는 간식은 뭐예요?"
+   }
+  ],
+  "pages": [
+   {
+    "page": 1,
+    "q": "내가 제일 좋아하는 것 하나만 골라봐. 뭐야?",
+    "qEn": "What is your favorite thing?",
+    "frames": {
+     "1": "I like ___{좋아하는 것}.",
+     "2": "This is my favorite ___{종류: food, game}: ___{이름}.",
+     "3": "This is my favorite ___{종류}: ___{이름}. I could ___{하는 일} every day."
+    }
+   },
+   {
+    "page": 2,
+    "q": "눈을 감고 떠올려 봐. 색깔, 소리, 냄새, 맛, 느낌은?",
+    "qEn": "How does it look, smell, taste, or feel?",
+    "frames": {
+     "1": "It's ___{느낌}.",
+     "2": "It's ___{색·모양}, ___{느낌}, and a little ___{느낌}.",
+     "3": "It looks like ___{닮은 것}, and it's ___{느낌} and ___{느낌}."
+    }
+   },
+   {
+    "page": 3,
+    "q": "그중에서 가장 좋은 부분은 어디야?",
+    "qEn": "What is the best part?",
+    "frames": {
+     "1": "I like the ___{부분}.",
+     "2": "The best part is ___{가장 좋은 부분}. It's ___{느낌} and ___{느낌}.",
+     "3": "The best part is ___{가장 좋은 부분} because ___{까닭}."
+    }
+   },
+   {
+    "page": 4,
+    "q": "언제 그게 제일 좋아? 그때 기분은?",
+    "qEn": "When do you like it the most?",
+    "frames": {
+     "1": "I feel ___{기분}.",
+     "2": "When I ___{할 때}, I feel ___{기분}.",
+     "3": "When I ___{할 때}, it makes me feel ___{기분} because ___{까닭}."
+    }
+   },
+   {
+    "page": 5,
+    "q": "그것과 같이 떠오르는 기억이 있어?",
+    "qEn": "Does it remind you of something?",
+    "frames": {
+     "1": "I remember ___{기억}.",
+     "2": "It reminds me of ___{떠오르는 것}. ___{누구} and I ___{한 일}.",
+     "3": "It reminds me of ___{떠오르는 것}. Every ___{언제}, ___{누구} and I ___{한 일}."
+    }
+   },
+   {
+    "page": 6,
+    "q": "조심할 점이나 친구에게 추천하고 싶은 말은?",
+    "qEn": "Any tips for your friends?",
+    "frames": {
+     "1": "You should try ___{무엇}!",
+     "2": "But be careful! It's really ___{조심할 점}. ___{도움말}!",
+     "3": "You should try ___{무엇}! But be careful! ___{조심할 점}."
+    }
+   }
+  ]
+ },
+ {
+  "lesson": 4,
+  "title": "How to ___ Like an Expert",
+  "titleKo": "내가 전문가인 것",
+  "chunks": [
+   "First, ___.",
+   "Next, ___. Then, ___.",
+   "Don't forget to ___.",
+   "Here's my secret tip: ___."
+  ],
+  "modelBook": [
+   {
+    "key": "cover",
+    "image": "books/lesson4/cover.webp",
+    "en": "How to Make the Best Cup Ramen",
+    "ko": "최고의 컵라면 만드는 법"
+   },
+   {
+    "key": "p1",
+    "image": "books/lesson4/p1.webp",
+    "en": "I'm a cup ramen expert. Trust me!",
+    "ko": "나는 컵라면 전문가예요. 믿어 보세요!"
+   },
+   {
+    "key": "p2",
+    "image": "books/lesson4/p2.webp",
+    "en": "You need cup ramen, hot water, cheese, and chopsticks.",
+    "ko": "컵라면, 뜨거운 물, 치즈, 젓가락이 필요해요."
+   },
+   {
+    "key": "p3",
+    "image": "books/lesson4/p3.webp",
+    "en": "First, open the lid halfway and put in the soup powder.",
+    "ko": "먼저 뚜껑을 반쯤 열고 수프 가루를 넣어요."
+   },
+   {
+    "key": "p4",
+    "image": "books/lesson4/p4.webp",
+    "en": "Next, pour hot water up to the line. Then, close the lid and wait for three minutes.",
+    "ko": "다음에 뜨거운 물을 선까지 부어요. 그리고 뚜껑을 닫고 3분 기다려요."
+   },
+   {
+    "key": "p5",
+    "image": "books/lesson4/p5.webp",
+    "en": "Be careful! The water is very hot. Ask an adult for help.",
+    "ko": "조심해요! 물이 아주 뜨거워요. 어른에게 도와 달라고 해요."
+   },
+   {
+    "key": "p6",
+    "image": "books/lesson4/p6.webp",
+    "en": "Here's my secret tip: Put the cheese in at the very end and stir slowly. It gets so creamy! Finally, enjoy!",
+    "ko": "나만의 꿀팁: 치즈는 맨 마지막에 넣고 천천히 저어요. 정말 부드러워져요! 이제 맛있게 먹어요!"
+   },
+   {
+    "key": "back",
+    "image": "books/lesson4/back.webp",
+    "en": "Are you a ramen expert now? Try it!",
+    "ko": "이제 라면 전문가가 됐나요? 해 보세요!"
+   }
+  ],
+  "pages": [
+   {
+    "page": 1,
+    "q": "너는 무슨 전문가야? 왜 자신 있어?",
+    "qEn": "What are you an expert at?",
+    "frames": {
+     "1": "I'm good at ___{잘하는 것}.",
+     "2": "I'm a ___{무엇} expert. Trust me!",
+     "3": "I'm a ___{무엇} expert because I ___{하는 일} every day."
+    }
+   },
+   {
+    "page": 2,
+    "q": "그걸 하려면 뭐가 필요해?",
+    "qEn": "What do you need?",
+    "frames": {
+     "1": "You need ___{필요한 것}.",
+     "2": "You need ___{준비물}, ___{준비물}, ___{준비물}, and ___{준비물}.",
+     "3": "You need ___{준비물}, ___{준비물}, and ___{준비물}. Oh, and don't forget ___{잊기 쉬운 것}!"
+    }
+   },
+   {
+    "page": 3,
+    "q": "맨 처음엔 뭘 해?",
+    "qEn": "What do you do first?",
+    "frames": {
+     "1": "First, ___{먼저 할 일}.",
+     "2": "First, ___{먼저 할 일} and ___{이어서 할 일}.",
+     "3": "First, ___{먼저 할 일}. Make sure you ___{꼭 할 일}."
+    }
+   },
+   {
+    "page": 4,
+    "q": "그다음엔? 또 그다음엔?",
+    "qEn": "What comes next?",
+    "frames": {
+     "1": "Next, ___{다음 할 일}.",
+     "2": "Next, ___{다음 할 일}. Then, ___{그다음 할 일} and wait for ___{몇} minutes.",
+     "3": "Next, ___{다음 할 일}. Then, ___{그다음 할 일}, but don't ___{하지 말 것}!"
+    }
+   },
+   {
+    "page": 5,
+    "q": "조심해야 할 건 뭐야? 사람들이 자주 하는 실수는?",
+    "qEn": "What should you be careful about?",
+    "frames": {
+     "1": "Be careful! Don't ___{하지 말 것}.",
+     "2": "Be careful! The ___{무엇} is very ___{어떤}. Ask an adult for help.",
+     "3": "Be careful! If you ___{이렇게 하면}, ___{이렇게 돼}. Ask an adult for help."
+    }
+   },
+   {
+    "page": 6,
+    "q": "너만 아는 꿀팁은?",
+    "qEn": "What is your secret tip?",
+    "frames": {
+     "1": "Here's my tip: ___{꿀팁}.",
+     "2": "Here's my secret tip: ___{꿀팁}. It gets so ___{어떻게}! Finally, enjoy!",
+     "3": "Here's my secret tip: ___{꿀팁}. Nobody knows this! Finally, ___{마무리}."
+    }
+   }
+  ]
+ },
+ {
+  "lesson": 5,
+  "title": "The Day I ___",
+  "titleKo": "내가 겪은 일 이야기",
+  "chunks": [
+   "One day, ___.",
+   "Suddenly, ___.",
+   "I was so ___.",
+   "In the end, ___."
+  ],
+  "modelBook": [
+   {
+    "key": "cover",
+    "image": "books/lesson5/cover.webp",
+    "en": "The Day I Lost My Sandal",
+    "ko": "샌들을 잃어버린 날"
+   },
+   {
+    "key": "p1",
+    "image": "books/lesson5/p1.webp",
+    "en": "One summer day, I went to the beach with my family.",
+    "ko": "어느 여름날, 가족과 바닷가에 갔어요."
+   },
+   {
+    "key": "p2",
+    "image": "books/lesson5/p2.webp",
+    "en": "The water was cold, but I was so happy.",
+    "ko": "물은 차가웠지만 너무 신났어요."
+   },
+   {
+    "key": "p3",
+    "image": "books/lesson5/p3.webp",
+    "en": "Suddenly, a big wave came. Splash!",
+    "ko": "갑자기 큰 파도가 왔어요. 철썩!"
+   },
+   {
+    "key": "p4",
+    "image": "books/lesson5/p4.webp",
+    "en": "I lost my new sandal! I was so sad.",
+    "ko": "새 샌들 한 짝을 잃어버렸어요! 너무 슬펐어요."
+   },
+   {
+    "key": "p5",
+    "image": "books/lesson5/p5.webp",
+    "en": "In the end, my dad found it. It was on a rock!",
+    "ko": "결국 아빠가 찾아 주셨어요. 바위 위에 있었어요!"
+   },
+   {
+    "key": "p6",
+    "image": "books/lesson5/p6.webp",
+    "en": "I'll never forget that day. Now I hold my sandals tight.",
+    "ko": "그날을 절대 잊지 못해요. 이제는 샌들을 꼭 붙잡아요."
+   },
+   {
+    "key": "back",
+    "image": "books/lesson5/back.webp",
+    "en": "Did you ever lose something at the beach?",
+    "ko": "여러분도 바닷가에서 뭔가를 잃어버린 적 있나요?"
+   }
+  ],
+  "pages": [
+   {
+    "page": 1,
+    "q": "언제, 어디서, 누구랑 있었던 일이야?",
+    "qEn": "When, where, and who with?",
+    "frames": {
+     "1": "I went to ___{어디}.",
+     "2": "One ___{계절·요일} day, I went to ___{어디} with ___{누구}.",
+     "3": "One ___{계절·요일} day, I went to ___{어디} with ___{누구}. I was so ___{기분}."
+    }
+   },
+   {
+    "page": 2,
+    "q": "처음엔 어땠어? 기분은?",
+    "qEn": "How was it at first?",
+    "frames": {
+     "1": "It was ___{어땠어}.",
+     "2": "The ___{무엇} was ___{어땠어}, but I was so ___{기분}.",
+     "3": "The ___{무엇} was ___{어땠어}, but I was so ___{기분} because ___{까닭}."
+    }
+   },
+   {
+    "page": 3,
+    "q": "갑자기 무슨 일이 생겼어?",
+    "qEn": "What happened suddenly?",
+    "frames": {
+     "1": "Suddenly, ___{무슨 일}!",
+     "2": "Suddenly, ___{무슨 일}. ___{소리 말: Splash! Boom!}",
+     "3": "Suddenly, ___{무슨 일}. I couldn't believe it!"
+    }
+   },
+   {
+    "page": 4,
+    "q": "그래서 어떻게 됐어? 그때 마음은?",
+    "qEn": "Then what? How did you feel?",
+    "frames": {
+     "1": "I was so ___{기분}.",
+     "2": "I ___{무슨 일이 생겼어}! I was so ___{기분}.",
+     "3": "I ___{무슨 일이 생겼어}! I was so ___{기분}, so I ___{그래서 한 일}."
+    }
+   },
+   {
+    "page": 5,
+    "q": "결국 어떻게 끝났어?",
+    "qEn": "How did it end?",
+    "frames": {
+     "1": "In the end, ___{어떻게 끝났어}.",
+     "2": "In the end, ___{누가 무엇을 했어}. It was ___{어디·어땠어}!",
+     "3": "Luckily, ___{다행인 일}. In the end, ___{어떻게 끝났어}. I was so relieved!"
+    }
+   },
+   {
+    "page": 6,
+    "q": "지금 생각하면 어때? 그 일로 달라진 게 있어?",
+    "qEn": "How do you feel about it now?",
+    "frames": {
+     "1": "I'll never forget ___{무엇}.",
+     "2": "I'll never forget that day. Now I ___{지금 하는 것}.",
+     "3": "I'll never forget that day. Now I ___{지금 하는 것} because ___{까닭}."
+    }
+   }
+  ]
+ },
+ {
+  "lesson": 6,
+  "title": "My Big Opinion",
+  "titleKo": "나는 이렇게 생각해",
+  "chunks": [
+   "I think ___ because ___.",
+   "Also, ___.",
+   "Some people say ___, but ___.",
+   "That's why I think ___."
+  ],
+  "modelBook": [
+   {
+    "key": "cover",
+    "image": "books/lesson6/cover.webp",
+    "en": "My Big Opinion: Cats or Dogs?",
+    "ko": "내 생각: 고양이일까, 강아지일까?"
+   },
+   {
+    "key": "p1",
+    "image": "books/lesson6/p1.webp",
+    "en": "Question: Cats or dogs? Which are better?",
+    "ko": "질문: 고양이와 강아지, 어느 쪽이 더 좋을까요?"
+   },
+   {
+    "key": "p2",
+    "image": "books/lesson6/p2.webp",
+    "en": "I think cats are better than dogs.",
+    "ko": "나는 고양이가 강아지보다 더 좋다고 생각해요."
+   },
+   {
+    "key": "p3",
+    "image": "books/lesson6/p3.webp",
+    "en": "First, cats are quiet. They don't bark at night.",
+    "ko": "첫째, 고양이는 조용해요. 밤에 짖지 않아요."
+   },
+   {
+    "key": "p4",
+    "image": "books/lesson6/p4.webp",
+    "en": "Also, you don't need to walk them. That's great on rainy days!",
+    "ko": "또 산책을 안 시켜도 돼요. 비 오는 날 최고예요!"
+   },
+   {
+    "key": "p5",
+    "image": "books/lesson6/p5.webp",
+    "en": "Some people say cats are cold, but my cat sleeps on my face every morning.",
+    "ko": "고양이가 차갑다는 사람도 있지만, 우리 고양이는 매일 아침 내 얼굴 위에서 자요."
+   },
+   {
+    "key": "p6",
+    "image": "books/lesson6/p6.webp",
+    "en": "That's why I think cats are the best. Sorry, dog lovers!",
+    "ko": "그래서 나는 고양이가 최고라고 생각해요. 강아지 좋아하는 분들, 미안해요!"
+   },
+   {
+    "key": "back",
+    "image": "books/lesson6/back.webp",
+    "en": "What do YOU think? Cats or dogs?",
+    "ko": "여러분 생각은 어때요? 고양이, 강아지?"
+   }
+  ],
+  "pages": [
+   {
+    "page": 1,
+    "q": "어떤 질문에 대해 말할 거야?",
+    "qEn": "What is your question?",
+    "frames": {
+     "1": "Question: ___{무엇} or ___{무엇}?",
+     "2": "Question: ___{무엇} or ___{무엇}? Which are better?",
+     "3": "Question: Should ___{질문}? What do you think?"
+    }
+   },
+   {
+    "page": 2,
+    "q": "너의 생각은? 한 문장으로!",
+    "qEn": "What do you think?",
+    "frames": {
+     "1": "I like ___{무엇} better.",
+     "2": "I think ___{무엇} are better than ___{무엇}.",
+     "3": "I really think ___{무엇} are better than ___{무엇}."
+    }
+   },
+   {
+    "page": 3,
+    "q": "그렇게 생각하는 첫 번째 까닭은?",
+    "qEn": "Why? (Reason 1)",
+    "frames": {
+     "1": "First, ___{까닭 하나}.",
+     "2": "First, ___{무엇} are ___{어떤}. They don't ___{하지 않는 것}.",
+     "3": "First, ___{까닭 하나} because ___{더 자세히}. For example, ___{예}."
+    }
+   },
+   {
+    "page": 4,
+    "q": "또 다른 까닭은?",
+    "qEn": "Another reason?",
+    "frames": {
+     "1": "Also, ___{까닭 둘}.",
+     "2": "Also, you don't need to ___{안 해도 되는 것}. That's great on ___{언제}!",
+     "3": "Also, you can ___{할 수 있는 것}. That's why ___{그래서}."
+    }
+   },
+   {
+    "page": 5,
+    "q": "반대편 친구라면 뭐라고 할까? 거기에 너는 뭐라고 답할래?",
+    "qEn": "What would others say?",
+    "frames": {
+     "1": "Some people say ___{다른 생각}.",
+     "2": "Some people say ___{다른 생각}, but ___{내 대답}.",
+     "3": "That's true, but ___{내 대답}. For example, ___{예}."
+    }
+   },
+   {
+    "page": 6,
+    "q": "그래서 결국 너의 생각은?",
+    "qEn": "So what do you think?",
+    "frames": {
+     "1": "___{무엇} are the best!",
+     "2": "That's why I think ___{무엇} are the best. Sorry, ___{반대편} lovers!",
+     "3": "That's why I think ___{내 생각}. What do you think?"
+    }
+   }
+  ]
+ },
+ {
+  "lesson": 7,
+  "title": "If I Could ___",
+  "titleKo": "상상하면 무엇이든",
+  "chunks": [
+   "If I could ___, I would ___.",
+   "First, I would ___.",
+   "I would ___ because ___.",
+   "But I would never ___."
+  ],
+  "modelBook": [
+   {
+    "key": "cover",
+    "image": "books/lesson7/cover.webp",
+    "en": "If I Were Invisible for a Day",
+    "ko": "하루 동안 투명인간이 된다면"
+   },
+   {
+    "key": "p1",
+    "image": "books/lesson7/p1.webp",
+    "en": "If I were invisible for one day...",
+    "ko": "내가 하루 동안 투명인간이 된다면…"
+   },
+   {
+    "key": "p2",
+    "image": "books/lesson7/p2.webp",
+    "en": "First, I would sneak into the teachers' room and eat all the snacks.",
+    "ko": "먼저 교무실에 몰래 들어가 간식을 다 먹을 거예요."
+   },
+   {
+    "key": "p3",
+    "image": "books/lesson7/p3.webp",
+    "en": "Then, I would sit next to my cat and watch her all day.",
+    "ko": "그다음엔 우리 고양이 옆에 앉아 하루 종일 지켜볼 거예요."
+   },
+   {
+    "key": "p4",
+    "image": "books/lesson7/p4.webp",
+    "en": "I would go to the zoo at night because I want to see the animals sleep.",
+    "ko": "밤에 동물원에 갈 거예요. 동물들이 자는 모습을 보고 싶거든요."
+   },
+   {
+    "key": "p5",
+    "image": "books/lesson7/p5.webp",
+    "en": "But I would never read my friends' diaries. That's not okay.",
+    "ko": "하지만 친구들 일기장은 절대 안 볼 거예요. 그건 안 되니까요."
+   },
+   {
+    "key": "p6",
+    "image": "books/lesson7/p6.webp",
+    "en": "It would be fun, but a little lonely. At night, I would come back and say, \"I'm home!\"",
+    "ko": "재밌겠지만 조금 외로울 것 같아요. 밤이 되면 돌아와서 “다녀왔습니다!”라고 할 거예요."
+   },
+   {
+    "key": "back",
+    "image": "books/lesson7/back.webp",
+    "en": "If you were invisible, what would you do?",
+    "ko": "여러분이 투명인간이 된다면 무엇을 할 건가요?"
+   }
+  ],
+  "pages": [
+   {
+    "page": 1,
+    "q": "어떤 상상을 해볼까?",
+    "qEn": "What if...?",
+    "frames": {
+     "1": "If I could ___{할 수 있다면}...",
+     "2": "If I were ___{무엇이 된다면} for one day...",
+     "3": "If I could ___{할 수 있다면} for one day, it would be amazing!"
+    }
+   },
+   {
+    "page": 2,
+    "q": "그렇게 되면 제일 먼저 뭘 할 거야?",
+    "qEn": "What would you do first?",
+    "frames": {
+     "1": "I want to ___{하고 싶은 일}.",
+     "2": "First, I would ___{할 일} and ___{할 일}.",
+     "3": "First, I would ___{할 일} because ___{까닭}."
+    }
+   },
+   {
+    "page": 3,
+    "q": "그다음엔 뭘 하고 싶어?",
+    "qEn": "What would you do next?",
+    "frames": {
+     "1": "Then, I want to ___{하고 싶은 일}.",
+     "2": "Then, I would ___{할 일} and ___{할 일} all day.",
+     "3": "Then, I would ___{할 일}. Nobody would know!"
+    }
+   },
+   {
+    "page": 4,
+    "q": "꼭 하고 싶은 일 하나와 그 까닭은?",
+    "qEn": "What would you do, and why?",
+    "frames": {
+     "1": "I want to go to ___{어디}.",
+     "2": "I would go to ___{어디} because I want to ___{하고 싶은 것}.",
+     "3": "I would go to ___{어디} at ___{언제} because I want to ___{하고 싶은 것}."
+    }
+   },
+   {
+    "page": 5,
+    "q": "그래도 절대 안 할 일은? 왜?",
+    "qEn": "What would you never do?",
+    "frames": {
+     "1": "I won't ___{안 할 일}.",
+     "2": "But I would never ___{절대 안 할 일}. That's not okay.",
+     "3": "But I would never ___{절대 안 할 일} because ___{까닭}."
+    }
+   },
+   {
+    "page": 6,
+    "q": "해보면 기분이 어떨 것 같아?",
+    "qEn": "How would it feel?",
+    "frames": {
+     "1": "It would be ___{기분}!",
+     "2": "It would be ___{기분}, but a little ___{기분}.",
+     "3": "It would be ___{기분}, but ___{그래도}. At night, I would ___{밤에 할 일}."
+    }
+   }
+  ]
+ },
+ {
+  "lesson": 8,
+  "title": "Dear Me",
+  "titleKo": "지금의 나에게, 다음의 나에게",
+  "chunks": [
+   "I'm proud that I ___.",
+   "Sometimes I worry that ___.",
+   "Next year, I want to ___.",
+   "Remember, ___."
+  ],
+  "modelBook": [
+   {
+    "key": "cover",
+    "image": "books/lesson8/cover.webp",
+    "en": "Dear Me",
+    "ko": "나에게"
+   },
+   {
+    "key": "p1",
+    "image": "books/lesson8/p1.webp",
+    "en": "Dear me, right now I'm teaching English online, and I love my students' little books.",
+    "ko": "나에게. 지금 나는 온라인으로 영어를 가르치고 있고, 학생들의 작은 책을 정말 좋아해."
+   },
+   {
+    "key": "p2",
+    "image": "books/lesson8/p2.webp",
+    "en": "I'm proud that I made eight little books with my students.",
+    "ko": "학생들과 작은 책 여덟 권을 만든 내가 자랑스러워."
+   },
+   {
+    "key": "p3",
+    "image": "books/lesson8/p3.webp",
+    "en": "Sometimes I worry that my students are scared to speak English.",
+    "ko": "가끔은 학생들이 영어로 말하는 걸 무서워할까 봐 걱정돼."
+   },
+   {
+    "key": "p4",
+    "image": "books/lesson8/p4.webp",
+    "en": "I learned that everyone has a lot to say. It's okay to start in Korean.",
+    "ko": "모두 하고 싶은 말이 많다는 걸 알게 됐어. 우리말로 시작해도 괜찮아."
+   },
+   {
+    "key": "p5",
+    "image": "books/lesson8/p5.webp",
+    "en": "Next year, I want to talk with my students in English for one whole class.",
+    "ko": "내년에는 학생들과 한 시간 내내 영어로 이야기해 보고 싶어."
+   },
+   {
+    "key": "p6",
+    "image": "books/lesson8/p6.webp",
+    "en": "Remember, mistakes are okay. Just keep talking.",
+    "ko": "기억해, 실수해도 괜찮아. 계속 말하면 돼."
+   },
+   {
+    "key": "back",
+    "image": "books/lesson8/back.webp",
+    "en": "Open this book next October.",
+    "ko": "이 책은 내년 10월에 열어 보기."
+   }
+  ],
+  "pages": [
+   {
+    "page": 1,
+    "q": "지금의 나는 어떤 모습이야? 요즘 뭘 하면서 지내?",
+    "qEn": "What are you like right now?",
+    "frames": {
+     "1": "Dear me, I'm ___{지금 나는}.",
+     "2": "Dear me, right now I'm ___{요즘 하는 일}, and I love ___{좋아하는 것}.",
+     "3": "Dear me, right now I'm ___{요즘 하는 일}, and I'm really into ___{빠져 있는 것}."
+    }
+   },
+   {
+    "page": 2,
+    "q": "요즘 내가 자랑스러운 건?",
+    "qEn": "What are you proud of?",
+    "frames": {
+     "1": "I'm proud of ___{자랑}.",
+     "2": "I'm proud that I ___{해낸 일}.",
+     "3": "I'm proud that I ___{해낸 일}. It was ___{어땠어}, but I did it!"
+    }
+   },
+   {
+    "page": 3,
+    "q": "요즘 마음에 걸리는 건? (안 써도 돼)",
+    "qEn": "What are you worried about? (You can skip this.)",
+    "frames": {
+     "1": "I'm worried about ___{걱정}.",
+     "2": "Sometimes I worry that ___{걱정}.",
+     "3": "Sometimes I worry that ___{걱정}, but ___{그래도}."
+    }
+   },
+   {
+    "page": 4,
+    "q": "올해 알게 된 것 중에 기억하고 싶은 건?",
+    "qEn": "What did you learn?",
+    "frames": {
+     "1": "I learned ___{배운 것}.",
+     "2": "I learned that ___{알게 된 것}. It's okay to ___{괜찮은 것}.",
+     "3": "I learned that ___{알게 된 것}. Now I ___{달라진 것}."
+    }
+   },
+   {
+    "page": 5,
+    "q": "내년의 나는 뭘 해보고 싶어?",
+    "qEn": "What do you want to do next year?",
+    "frames": {
+     "1": "I hope ___{바람}.",
+     "2": "Next year, I want to ___{하고 싶은 일}.",
+     "3": "Next year, I want to ___{하고 싶은 일} because ___{까닭}."
+    }
+   },
+   {
+    "page": 6,
+    "q": "미래의 나에게 꼭 해주고 싶은 한마디는?",
+    "qEn": "What do you want to tell your future self?",
+    "frames": {
+     "1": "Remember, ___{기억할 말}.",
+     "2": "Remember, ___{기억할 말}. Just keep ___{계속할 것}.",
+     "3": "Remember, ___{기억할 말}. Don't forget ___{잊지 말 것}. I believe in you!"
+    }
+   }
+  ]
+ }
+]

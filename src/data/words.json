@@ -1,0 +1,4638 @@
+[
+ {
+  "id": "w001",
+  "ko": "엄마",
+  "tags": [
+   "엄마",
+   "어머니"
+  ],
+  "en": "mom",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w002",
+  "ko": "아빠",
+  "tags": [
+   "아빠",
+   "아버지"
+  ],
+  "en": "dad",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w003",
+  "ko": "할머니",
+  "tags": [
+   "할머니",
+   "할매",
+   "외할머니",
+   "친할머니"
+  ],
+  "en": "grandma",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w004",
+  "ko": "할아버지",
+  "tags": [
+   "할아버지",
+   "외할아버지",
+   "친할아버지"
+  ],
+  "en": "grandpa",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w005",
+  "ko": "형·오빠",
+  "tags": [
+   "형",
+   "오빠",
+   "형·오빠"
+  ],
+  "en": "big brother",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w006",
+  "ko": "누나·언니",
+  "tags": [
+   "누나",
+   "언니",
+   "누나·언니"
+  ],
+  "en": "big sister",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w007",
+  "ko": "남동생",
+  "tags": [
+   "남동생"
+  ],
+  "en": "little brother",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w008",
+  "ko": "여동생",
+  "tags": [
+   "여동생"
+  ],
+  "en": "little sister",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w009",
+  "ko": "동생",
+  "tags": [
+   "동생"
+  ],
+  "en": "little brother / little sister",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w010",
+  "ko": "사촌",
+  "tags": [
+   "사촌"
+  ],
+  "en": "cousin",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w011",
+  "ko": "삼촌",
+  "tags": [
+   "삼촌",
+   "외삼촌"
+  ],
+  "en": "uncle",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w012",
+  "ko": "이모·고모",
+  "tags": [
+   "이모",
+   "고모",
+   "숙모",
+   "이모·고모"
+  ],
+  "en": "aunt",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w013",
+  "ko": "아기",
+  "tags": [
+   "아기",
+   "애기"
+  ],
+  "en": "baby",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w014",
+  "ko": "가족",
+  "tags": [
+   "가족",
+   "식구"
+  ],
+  "en": "family",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w015",
+  "ko": "친구",
+  "tags": [
+   "친구"
+  ],
+  "en": "friend",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w016",
+  "ko": "제일 친한 친구",
+  "tags": [
+   "절친",
+   "베프",
+   "단짝",
+   "제일친한친구"
+  ],
+  "en": "best friend",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w017",
+  "ko": "반 친구",
+  "tags": [
+   "반친구",
+   "같은반"
+  ],
+  "en": "classmate",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w018",
+  "ko": "선생님",
+  "tags": [
+   "선생님",
+   "쌤"
+  ],
+  "en": "teacher",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w019",
+  "ko": "이웃",
+  "tags": [
+   "이웃",
+   "옆집"
+  ],
+  "en": "neighbor",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w020",
+  "ko": "강아지",
+  "tags": [
+   "강아지",
+   "개",
+   "멍멍이"
+  ],
+  "en": "dog",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w021",
+  "ko": "아기 강아지",
+  "tags": [
+   "아기강아지",
+   "새끼강아지"
+  ],
+  "en": "puppy",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w022",
+  "ko": "고양이",
+  "tags": [
+   "고양이",
+   "냥이"
+  ],
+  "en": "cat",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w023",
+  "ko": "아기 고양이",
+  "tags": [
+   "아기고양이",
+   "새끼고양이"
+  ],
+  "en": "kitten",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w024",
+  "ko": "햄스터",
+  "tags": [
+   "햄스터"
+  ],
+  "en": "hamster",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w025",
+  "ko": "토끼",
+  "tags": [
+   "토끼"
+  ],
+  "en": "rabbit",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w026",
+  "ko": "거북이",
+  "tags": [
+   "거북",
+   "거북이"
+  ],
+  "en": "turtle",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w027",
+  "ko": "물고기",
+  "tags": [
+   "물고기",
+   "금붕어"
+  ],
+  "en": "fish",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w028",
+  "ko": "새",
+  "tags": [
+   "새",
+   "참새"
+  ],
+  "en": "bird",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w029",
+  "ko": "앵무새",
+  "tags": [
+   "앵무새"
+  ],
+  "en": "parrot",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w030",
+  "ko": "고슴도치",
+  "tags": [
+   "고슴도치"
+  ],
+  "en": "hedgehog",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w031",
+  "ko": "곰",
+  "tags": [
+   "곰"
+  ],
+  "en": "bear",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w032",
+  "ko": "곰 인형",
+  "tags": [
+   "곰인형",
+   "테디베어"
+  ],
+  "en": "teddy bear",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w033",
+  "ko": "사자",
+  "tags": [
+   "사자"
+  ],
+  "en": "lion",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w034",
+  "ko": "호랑이",
+  "tags": [
+   "호랑이"
+  ],
+  "en": "tiger",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w035",
+  "ko": "코끼리",
+  "tags": [
+   "코끼리"
+  ],
+  "en": "elephant",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w036",
+  "ko": "기린",
+  "tags": [
+   "기린"
+  ],
+  "en": "giraffe",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w037",
+  "ko": "원숭이",
+  "tags": [
+   "원숭이"
+  ],
+  "en": "monkey",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w038",
+  "ko": "펭귄",
+  "tags": [
+   "펭귄"
+  ],
+  "en": "penguin",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w039",
+  "ko": "판다",
+  "tags": [
+   "판다"
+  ],
+  "en": "panda",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w040",
+  "ko": "여우",
+  "tags": [
+   "여우"
+  ],
+  "en": "fox",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w041",
+  "ko": "공룡",
+  "tags": [
+   "공룡"
+  ],
+  "en": "dinosaur",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w042",
+  "ko": "개구리",
+  "tags": [
+   "개구리"
+  ],
+  "en": "frog",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w043",
+  "ko": "나비",
+  "tags": [
+   "나비"
+  ],
+  "en": "butterfly",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w044",
+  "ko": "벌레",
+  "tags": [
+   "벌레"
+  ],
+  "en": "bug",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w045",
+  "ko": "모기",
+  "tags": [
+   "모기"
+  ],
+  "en": "mosquito",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w046",
+  "ko": "꿀벌",
+  "tags": [
+   "벌",
+   "꿀벌"
+  ],
+  "en": "bee",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w047",
+  "ko": "거미",
+  "tags": [
+   "거미"
+  ],
+  "en": "spider",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w048",
+  "ko": "돌고래",
+  "tags": [
+   "돌고래"
+  ],
+  "en": "dolphin",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w049",
+  "ko": "상어",
+  "tags": [
+   "상어"
+  ],
+  "en": "shark",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w050",
+  "ko": "말",
+  "tags": [
+   "말",
+   "조랑말"
+  ],
+  "en": "horse",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w051",
+  "ko": "돼지",
+  "tags": [
+   "돼지"
+  ],
+  "en": "pig",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w052",
+  "ko": "소",
+  "tags": [
+   "소",
+   "젖소"
+  ],
+  "en": "cow",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w053",
+  "ko": "닭",
+  "tags": [
+   "닭"
+  ],
+  "en": "chicken",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w054",
+  "ko": "오리",
+  "tags": [
+   "오리"
+  ],
+  "en": "duck",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w055",
+  "ko": "다람쥐",
+  "tags": [
+   "다람쥐"
+  ],
+  "en": "squirrel",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w056",
+  "ko": "게",
+  "tags": [
+   "게",
+   "꽃게"
+  ],
+  "en": "crab",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w057",
+  "ko": "떡볶이",
+  "tags": [
+   "떡볶이"
+  ],
+  "en": "tteokbokki",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w058",
+  "ko": "김밥",
+  "tags": [
+   "김밥"
+  ],
+  "en": "gimbap",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w059",
+  "ko": "라면",
+  "tags": [
+   "라면"
+  ],
+  "en": "ramen",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w060",
+  "ko": "컵라면",
+  "tags": [
+   "컵라면"
+  ],
+  "en": "cup ramen",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w061",
+  "ko": "치킨",
+  "tags": [
+   "치킨",
+   "통닭"
+  ],
+  "en": "fried chicken",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w062",
+  "ko": "피자",
+  "tags": [
+   "피자"
+  ],
+  "en": "pizza",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w063",
+  "ko": "햄버거",
+  "tags": [
+   "햄버거"
+  ],
+  "en": "hamburger",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w064",
+  "ko": "감자튀김",
+  "tags": [
+   "감자튀김"
+  ],
+  "en": "French fries",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w065",
+  "ko": "아이스크림",
+  "tags": [
+   "아이스크림"
+  ],
+  "en": "ice cream",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w066",
+  "ko": "초콜릿",
+  "tags": [
+   "초콜릿",
+   "초코"
+  ],
+  "en": "chocolate",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w067",
+  "ko": "사탕",
+  "tags": [
+   "사탕"
+  ],
+  "en": "candy",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w068",
+  "ko": "젤리",
+  "tags": [
+   "젤리"
+  ],
+  "en": "gummies",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w069",
+  "ko": "과자",
+  "tags": [
+   "과자",
+   "스낵"
+  ],
+  "en": "snacks",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w070",
+  "ko": "케이크",
+  "tags": [
+   "케이크"
+  ],
+  "en": "cake",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w071",
+  "ko": "쿠키",
+  "tags": [
+   "쿠키"
+  ],
+  "en": "cookies",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w072",
+  "ko": "빵",
+  "tags": [
+   "빵"
+  ],
+  "en": "bread",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w073",
+  "ko": "떡",
+  "tags": [
+   "떡"
+  ],
+  "en": "rice cake",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w074",
+  "ko": "김치",
+  "tags": [
+   "김치"
+  ],
+  "en": "kimchi",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w075",
+  "ko": "불고기",
+  "tags": [
+   "불고기"
+  ],
+  "en": "bulgogi",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w076",
+  "ko": "삼겹살",
+  "tags": [
+   "삼겹살"
+  ],
+  "en": "pork belly",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w077",
+  "ko": "비빔밥",
+  "tags": [
+   "비빔밥"
+  ],
+  "en": "bibimbap",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w078",
+  "ko": "짜장면",
+  "tags": [
+   "짜장면",
+   "자장면"
+  ],
+  "en": "black bean noodles",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w079",
+  "ko": "만두",
+  "tags": [
+   "만두"
+  ],
+  "en": "dumplings",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w080",
+  "ko": "밥",
+  "tags": [
+   "밥",
+   "쌀밥"
+  ],
+  "en": "rice",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w081",
+  "ko": "국",
+  "tags": [
+   "국",
+   "찌개"
+  ],
+  "en": "soup",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w082",
+  "ko": "죽",
+  "tags": [
+   "죽"
+  ],
+  "en": "rice porridge",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w083",
+  "ko": "계란",
+  "tags": [
+   "계란",
+   "달걀"
+  ],
+  "en": "eggs",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w084",
+  "ko": "우유",
+  "tags": [
+   "우유"
+  ],
+  "en": "milk",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w085",
+  "ko": "주스",
+  "tags": [
+   "주스"
+  ],
+  "en": "juice",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w086",
+  "ko": "물",
+  "tags": [
+   "물"
+  ],
+  "en": "water",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w087",
+  "ko": "과일",
+  "tags": [
+   "과일"
+  ],
+  "en": "fruit",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w088",
+  "ko": "사과",
+  "tags": [
+   "사과"
+  ],
+  "en": "apples",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w089",
+  "ko": "바나나",
+  "tags": [
+   "바나나"
+  ],
+  "en": "bananas",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w090",
+  "ko": "딸기",
+  "tags": [
+   "딸기"
+  ],
+  "en": "strawberries",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w091",
+  "ko": "포도",
+  "tags": [
+   "포도"
+  ],
+  "en": "grapes",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w092",
+  "ko": "수박",
+  "tags": [
+   "수박"
+  ],
+  "en": "watermelon",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w093",
+  "ko": "귤",
+  "tags": [
+   "귤",
+   "감귤"
+  ],
+  "en": "tangerines",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w094",
+  "ko": "복숭아",
+  "tags": [
+   "복숭아"
+  ],
+  "en": "peaches",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w095",
+  "ko": "망고",
+  "tags": [
+   "망고"
+  ],
+  "en": "mangoes",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w096",
+  "ko": "당근",
+  "tags": [
+   "당근"
+  ],
+  "en": "carrots",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w097",
+  "ko": "오이",
+  "tags": [
+   "오이"
+  ],
+  "en": "cucumbers",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w098",
+  "ko": "감자",
+  "tags": [
+   "감자"
+  ],
+  "en": "potatoes",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w099",
+  "ko": "고구마",
+  "tags": [
+   "고구마"
+  ],
+  "en": "sweet potatoes",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w100",
+  "ko": "옥수수",
+  "tags": [
+   "옥수수"
+  ],
+  "en": "corn",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w101",
+  "ko": "팝콘",
+  "tags": [
+   "팝콘"
+  ],
+  "en": "popcorn",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w102",
+  "ko": "샌드위치",
+  "tags": [
+   "샌드위치"
+  ],
+  "en": "sandwiches",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w103",
+  "ko": "스파게티",
+  "tags": [
+   "스파게티",
+   "파스타"
+  ],
+  "en": "spaghetti",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w104",
+  "ko": "핫도그",
+  "tags": [
+   "핫도그"
+  ],
+  "en": "hot dogs",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w105",
+  "ko": "마라탕",
+  "tags": [
+   "마라탕"
+  ],
+  "en": "malatang",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w106",
+  "ko": "탕후루",
+  "tags": [
+   "탕후루"
+  ],
+  "en": "tanghulu",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w107",
+  "ko": "붕어빵",
+  "tags": [
+   "붕어빵"
+  ],
+  "en": "fish-shaped bread",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w108",
+  "ko": "호떡",
+  "tags": [
+   "호떡"
+  ],
+  "en": "sweet pancakes",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w109",
+  "ko": "어묵",
+  "tags": [
+   "어묵",
+   "오뎅"
+  ],
+  "en": "fish cakes",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w110",
+  "ko": "치즈",
+  "tags": [
+   "치즈"
+  ],
+  "en": "cheese",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w111",
+  "ko": "소시지",
+  "tags": [
+   "소시지"
+  ],
+  "en": "sausages",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w112",
+  "ko": "도넛",
+  "tags": [
+   "도넛",
+   "도너츠"
+  ],
+  "en": "donuts",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w113",
+  "ko": "와플",
+  "tags": [
+   "와플"
+  ],
+  "en": "waffles",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w114",
+  "ko": "집",
+  "tags": [
+   "집"
+  ],
+  "en": "home",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w115",
+  "ko": "우리 집",
+  "tags": [
+   "우리집"
+  ],
+  "en": "my house",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w116",
+  "ko": "학교",
+  "tags": [
+   "학교"
+  ],
+  "en": "school",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w117",
+  "ko": "교실",
+  "tags": [
+   "교실"
+  ],
+  "en": "the classroom",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w118",
+  "ko": "운동장",
+  "tags": [
+   "운동장"
+  ],
+  "en": "the school field",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w119",
+  "ko": "놀이터",
+  "tags": [
+   "놀이터"
+  ],
+  "en": "the playground",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w120",
+  "ko": "공원",
+  "tags": [
+   "공원"
+  ],
+  "en": "the park",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w121",
+  "ko": "바닷가",
+  "tags": [
+   "바닷가",
+   "해변"
+  ],
+  "en": "the beach",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w429",
+  "ko": "바다",
+  "tags": [
+   "바다"
+  ],
+  "en": "the sea",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w122",
+  "ko": "산",
+  "tags": [
+   "산"
+  ],
+  "en": "the mountains",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w123",
+  "ko": "강",
+  "tags": [
+   "강",
+   "냇가"
+  ],
+  "en": "the river",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w124",
+  "ko": "수영장",
+  "tags": [
+   "수영장"
+  ],
+  "en": "the swimming pool",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w125",
+  "ko": "도서관",
+  "tags": [
+   "도서관"
+  ],
+  "en": "the library",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w126",
+  "ko": "학원",
+  "tags": [
+   "학원"
+  ],
+  "en": "my academy",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w127",
+  "ko": "편의점",
+  "tags": [
+   "편의점"
+  ],
+  "en": "the convenience store",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w128",
+  "ko": "마트",
+  "tags": [
+   "마트"
+  ],
+  "en": "the supermarket",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w129",
+  "ko": "시장",
+  "tags": [
+   "시장"
+  ],
+  "en": "the market",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w130",
+  "ko": "식당",
+  "tags": [
+   "식당",
+   "음식점"
+  ],
+  "en": "a restaurant",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w131",
+  "ko": "카페",
+  "tags": [
+   "카페"
+  ],
+  "en": "a café",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w132",
+  "ko": "병원",
+  "tags": [
+   "병원"
+  ],
+  "en": "the hospital",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w133",
+  "ko": "치과",
+  "tags": [
+   "치과"
+  ],
+  "en": "the dentist",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w134",
+  "ko": "영화관",
+  "tags": [
+   "영화관",
+   "극장"
+  ],
+  "en": "the movie theater",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w135",
+  "ko": "놀이공원",
+  "tags": [
+   "놀이공원",
+   "놀이동산"
+  ],
+  "en": "an amusement park",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w136",
+  "ko": "동물원",
+  "tags": [
+   "동물원"
+  ],
+  "en": "the zoo",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w137",
+  "ko": "수족관",
+  "tags": [
+   "수족관",
+   "아쿠아리움"
+  ],
+  "en": "the aquarium",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w138",
+  "ko": "박물관",
+  "tags": [
+   "박물관"
+  ],
+  "en": "the museum",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w139",
+  "ko": "캠핑장",
+  "tags": [
+   "캠핑장"
+  ],
+  "en": "a campsite",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w140",
+  "ko": "할머니 댁",
+  "tags": [
+   "할머니댁",
+   "할머니집",
+   "할머니네"
+  ],
+  "en": "my grandma's house",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w141",
+  "ko": "시골",
+  "tags": [
+   "시골"
+  ],
+  "en": "the countryside",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w142",
+  "ko": "도시",
+  "tags": [
+   "도시"
+  ],
+  "en": "the city",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w143",
+  "ko": "제주도",
+  "tags": [
+   "제주",
+   "제주도"
+  ],
+  "en": "Jeju Island",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w144",
+  "ko": "서울",
+  "tags": [
+   "서울"
+  ],
+  "en": "Seoul",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w145",
+  "ko": "부산",
+  "tags": [
+   "부산"
+  ],
+  "en": "Busan",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w146",
+  "ko": "외국",
+  "tags": [
+   "외국",
+   "해외"
+  ],
+  "en": "another country",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w147",
+  "ko": "하늘",
+  "tags": [
+   "하늘"
+  ],
+  "en": "the sky",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w148",
+  "ko": "우주",
+  "tags": [
+   "우주"
+  ],
+  "en": "space",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w149",
+  "ko": "숲",
+  "tags": [
+   "숲"
+  ],
+  "en": "the forest",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w150",
+  "ko": "섬",
+  "tags": [
+   "섬"
+  ],
+  "en": "an island",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w151",
+  "ko": "내 방",
+  "tags": [
+   "내방"
+  ],
+  "en": "my room",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w152",
+  "ko": "부엌",
+  "tags": [
+   "부엌",
+   "주방"
+  ],
+  "en": "the kitchen",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w153",
+  "ko": "거실",
+  "tags": [
+   "거실"
+  ],
+  "en": "the living room",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w154",
+  "ko": "화장실",
+  "tags": [
+   "화장실"
+  ],
+  "en": "the bathroom",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w155",
+  "ko": "교무실",
+  "tags": [
+   "교무실"
+  ],
+  "en": "the teachers' room",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w156",
+  "ko": "키즈카페",
+  "tags": [
+   "키즈카페"
+  ],
+  "en": "a kids' café",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w157",
+  "ko": "노래방",
+  "tags": [
+   "노래방"
+  ],
+  "en": "a karaoke room",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w158",
+  "ko": "버스",
+  "tags": [
+   "버스"
+  ],
+  "en": "the bus",
+  "past": null,
+  "group": "탈것"
+ },
+ {
+  "id": "w159",
+  "ko": "지하철",
+  "tags": [
+   "지하철"
+  ],
+  "en": "the subway",
+  "past": null,
+  "group": "탈것"
+ },
+ {
+  "id": "w160",
+  "ko": "기차",
+  "tags": [
+   "기차",
+   "KTX"
+  ],
+  "en": "the train",
+  "past": null,
+  "group": "탈것"
+ },
+ {
+  "id": "w161",
+  "ko": "비행기",
+  "tags": [
+   "비행기"
+  ],
+  "en": "a plane",
+  "past": null,
+  "group": "탈것"
+ },
+ {
+  "id": "w162",
+  "ko": "자동차",
+  "tags": [
+   "자동차",
+   "차"
+  ],
+  "en": "the car",
+  "past": null,
+  "group": "탈것"
+ },
+ {
+  "id": "w163",
+  "ko": "자전거",
+  "tags": [
+   "자전거"
+  ],
+  "en": "my bike",
+  "past": null,
+  "group": "탈것"
+ },
+ {
+  "id": "w164",
+  "ko": "배",
+  "tags": [
+   "배",
+   "유람선"
+  ],
+  "en": "a boat",
+  "past": null,
+  "group": "탈것"
+ },
+ {
+  "id": "w165",
+  "ko": "축구",
+  "tags": [
+   "축구"
+  ],
+  "en": "soccer",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w166",
+  "ko": "야구",
+  "tags": [
+   "야구"
+  ],
+  "en": "baseball",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w167",
+  "ko": "농구",
+  "tags": [
+   "농구"
+  ],
+  "en": "basketball",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w168",
+  "ko": "배드민턴",
+  "tags": [
+   "배드민턴"
+  ],
+  "en": "badminton",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w169",
+  "ko": "피구",
+  "tags": [
+   "피구"
+  ],
+  "en": "dodgeball",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w170",
+  "ko": "줄넘기",
+  "tags": [
+   "줄넘기"
+  ],
+  "en": "jump rope",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w171",
+  "ko": "수영",
+  "tags": [
+   "수영"
+  ],
+  "en": "swimming",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w172",
+  "ko": "태권도",
+  "tags": [
+   "태권도"
+  ],
+  "en": "taekwondo",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w173",
+  "ko": "인라인스케이트",
+  "tags": [
+   "인라인",
+   "인라인스케이트"
+  ],
+  "en": "inline skating",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w174",
+  "ko": "스케이트",
+  "tags": [
+   "스케이트"
+  ],
+  "en": "ice skating",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w175",
+  "ko": "스키",
+  "tags": [
+   "스키"
+  ],
+  "en": "skiing",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w176",
+  "ko": "달리기",
+  "tags": [
+   "달리기"
+  ],
+  "en": "running",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w177",
+  "ko": "춤",
+  "tags": [
+   "춤",
+   "댄스"
+  ],
+  "en": "dancing",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w178",
+  "ko": "노래",
+  "tags": [
+   "노래"
+  ],
+  "en": "singing",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w179",
+  "ko": "피아노",
+  "tags": [
+   "피아노"
+  ],
+  "en": "the piano",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w180",
+  "ko": "바이올린",
+  "tags": [
+   "바이올린"
+  ],
+  "en": "the violin",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w181",
+  "ko": "그림",
+  "tags": [
+   "그림",
+   "그림그리기"
+  ],
+  "en": "drawing",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w182",
+  "ko": "만들기",
+  "tags": [
+   "만들기",
+   "공작"
+  ],
+  "en": "making things",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w183",
+  "ko": "레고",
+  "tags": [
+   "레고",
+   "블록"
+  ],
+  "en": "Lego",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w184",
+  "ko": "보드게임",
+  "tags": [
+   "보드게임"
+  ],
+  "en": "board games",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w185",
+  "ko": "게임",
+  "tags": [
+   "게임"
+  ],
+  "en": "video games",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w186",
+  "ko": "유튜브",
+  "tags": [
+   "유튜브"
+  ],
+  "en": "YouTube",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w187",
+  "ko": "만화",
+  "tags": [
+   "만화",
+   "만화책"
+  ],
+  "en": "cartoons",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w188",
+  "ko": "웹툰",
+  "tags": [
+   "웹툰"
+  ],
+  "en": "webtoons",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w189",
+  "ko": "책 읽기",
+  "tags": [
+   "책읽기",
+   "독서"
+  ],
+  "en": "reading books",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w190",
+  "ko": "숨바꼭질",
+  "tags": [
+   "숨바꼭질"
+  ],
+  "en": "hide-and-seek",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w191",
+  "ko": "술래잡기",
+  "tags": [
+   "술래잡기"
+  ],
+  "en": "tag",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w192",
+  "ko": "슬라임",
+  "tags": [
+   "슬라임"
+  ],
+  "en": "slime",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w193",
+  "ko": "종이접기",
+  "tags": [
+   "종이접기"
+  ],
+  "en": "origami",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w194",
+  "ko": "요리",
+  "tags": [
+   "요리"
+  ],
+  "en": "cooking",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w195",
+  "ko": "캠핑",
+  "tags": [
+   "캠핑"
+  ],
+  "en": "camping",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w196",
+  "ko": "낚시",
+  "tags": [
+   "낚시"
+  ],
+  "en": "fishing",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w197",
+  "ko": "등산",
+  "tags": [
+   "등산"
+  ],
+  "en": "hiking",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w198",
+  "ko": "여행",
+  "tags": [
+   "여행"
+  ],
+  "en": "traveling",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w199",
+  "ko": "쇼핑",
+  "tags": [
+   "쇼핑"
+  ],
+  "en": "shopping",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w200",
+  "ko": "영화",
+  "tags": [
+   "영화"
+  ],
+  "en": "movies",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w201",
+  "ko": "드라마",
+  "tags": [
+   "드라마"
+  ],
+  "en": "dramas",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w202",
+  "ko": "케이팝",
+  "tags": [
+   "케이팝",
+   "아이돌"
+  ],
+  "en": "K-pop",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w203",
+  "ko": "큐브",
+  "tags": [
+   "큐브"
+  ],
+  "en": "the Rubik's cube",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w204",
+  "ko": "숙제",
+  "tags": [
+   "숙제"
+  ],
+  "en": "homework",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w205",
+  "ko": "시험",
+  "tags": [
+   "시험"
+  ],
+  "en": "tests",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w206",
+  "ko": "수학",
+  "tags": [
+   "수학"
+  ],
+  "en": "math",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w207",
+  "ko": "영어",
+  "tags": [
+   "영어"
+  ],
+  "en": "English",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w208",
+  "ko": "국어",
+  "tags": [
+   "국어"
+  ],
+  "en": "Korean",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w209",
+  "ko": "과학",
+  "tags": [
+   "과학"
+  ],
+  "en": "science",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w210",
+  "ko": "체육",
+  "tags": [
+   "체육"
+  ],
+  "en": "P.E.",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w211",
+  "ko": "미술",
+  "tags": [
+   "미술"
+  ],
+  "en": "art",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w212",
+  "ko": "음악",
+  "tags": [
+   "음악"
+  ],
+  "en": "music",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w213",
+  "ko": "급식",
+  "tags": [
+   "급식",
+   "점심급식"
+  ],
+  "en": "school lunch",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w214",
+  "ko": "방학",
+  "tags": [
+   "방학"
+  ],
+  "en": "vacation",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w215",
+  "ko": "쉬는 시간",
+  "tags": [
+   "쉬는시간"
+  ],
+  "en": "break time",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w216",
+  "ko": "가방",
+  "tags": [
+   "가방",
+   "책가방"
+  ],
+  "en": "backpack",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w217",
+  "ko": "연필",
+  "tags": [
+   "연필"
+  ],
+  "en": "pencil",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w218",
+  "ko": "지우개",
+  "tags": [
+   "지우개"
+  ],
+  "en": "eraser",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w219",
+  "ko": "공책",
+  "tags": [
+   "공책",
+   "노트"
+  ],
+  "en": "notebook",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w220",
+  "ko": "책",
+  "tags": [
+   "책"
+  ],
+  "en": "book",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w221",
+  "ko": "장난감",
+  "tags": [
+   "장난감"
+  ],
+  "en": "toys",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w222",
+  "ko": "인형",
+  "tags": [
+   "인형"
+  ],
+  "en": "stuffed animal",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w223",
+  "ko": "공",
+  "tags": [
+   "공"
+  ],
+  "en": "ball",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w224",
+  "ko": "우산",
+  "tags": [
+   "우산"
+  ],
+  "en": "umbrella",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w225",
+  "ko": "신발",
+  "tags": [
+   "신발",
+   "운동화"
+  ],
+  "en": "shoes",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w226",
+  "ko": "샌들",
+  "tags": [
+   "샌들"
+  ],
+  "en": "sandals",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w227",
+  "ko": "모자",
+  "tags": [
+   "모자"
+  ],
+  "en": "hat",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w228",
+  "ko": "안경",
+  "tags": [
+   "안경"
+  ],
+  "en": "glasses",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w229",
+  "ko": "시계",
+  "tags": [
+   "시계"
+  ],
+  "en": "watch",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w230",
+  "ko": "선물",
+  "tags": [
+   "선물"
+  ],
+  "en": "present",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w231",
+  "ko": "편지",
+  "tags": [
+   "편지"
+  ],
+  "en": "letter",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w232",
+  "ko": "일기",
+  "tags": [
+   "일기",
+   "일기장"
+  ],
+  "en": "diary",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w233",
+  "ko": "사진",
+  "tags": [
+   "사진"
+  ],
+  "en": "photo",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w234",
+  "ko": "컴퓨터",
+  "tags": [
+   "컴퓨터"
+  ],
+  "en": "computer",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w235",
+  "ko": "노트북",
+  "tags": [
+   "노트북"
+  ],
+  "en": "laptop",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w236",
+  "ko": "휴대폰",
+  "tags": [
+   "휴대폰",
+   "핸드폰",
+   "스마트폰"
+  ],
+  "en": "phone",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w237",
+  "ko": "이불",
+  "tags": [
+   "이불"
+  ],
+  "en": "blanket",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w238",
+  "ko": "침대",
+  "tags": [
+   "침대"
+  ],
+  "en": "bed",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w239",
+  "ko": "행복한",
+  "tags": [
+   "행복",
+   "기뻐",
+   "기쁘",
+   "행복한"
+  ],
+  "en": "happy",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w240",
+  "ko": "신나는",
+  "tags": [
+   "신나",
+   "신난",
+   "신났",
+   "신나는"
+  ],
+  "en": "excited",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w241",
+  "ko": "즐거운",
+  "tags": [
+   "즐거",
+   "재밌",
+   "재미있",
+   "즐거운"
+  ],
+  "en": "fun",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w242",
+  "ko": "슬픈",
+  "tags": [
+   "슬퍼",
+   "슬프",
+   "슬펐",
+   "슬픈"
+  ],
+  "en": "sad",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w243",
+  "ko": "화난",
+  "tags": [
+   "화나",
+   "화났",
+   "화난"
+  ],
+  "en": "angry",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w244",
+  "ko": "무서운",
+  "tags": [
+   "무서",
+   "겁나",
+   "무서운"
+  ],
+  "en": "scared",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w245",
+  "ko": "깜짝 놀란",
+  "tags": [
+   "놀라",
+   "놀랐",
+   "깜짝",
+   "깜짝놀란"
+  ],
+  "en": "surprised",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w246",
+  "ko": "걱정되는",
+  "tags": [
+   "걱정",
+   "걱정되는"
+  ],
+  "en": "worried",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w247",
+  "ko": "긴장되는",
+  "tags": [
+   "긴장",
+   "떨려",
+   "긴장되는"
+  ],
+  "en": "nervous",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w248",
+  "ko": "부끄러운",
+  "tags": [
+   "부끄",
+   "부끄러운"
+  ],
+  "en": "shy",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w249",
+  "ko": "창피한",
+  "tags": [
+   "창피",
+   "창피한"
+  ],
+  "en": "embarrassed",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w250",
+  "ko": "지루한",
+  "tags": [
+   "지루",
+   "심심",
+   "지루한"
+  ],
+  "en": "bored",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w251",
+  "ko": "피곤한",
+  "tags": [
+   "피곤",
+   "힘들",
+   "피곤한"
+  ],
+  "en": "tired",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w252",
+  "ko": "졸린",
+  "tags": [
+   "졸려",
+   "졸리",
+   "졸린"
+  ],
+  "en": "sleepy",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w253",
+  "ko": "배고픈",
+  "tags": [
+   "배고파",
+   "배고프",
+   "배고픈"
+  ],
+  "en": "hungry",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w254",
+  "ko": "배부른",
+  "tags": [
+   "배불러",
+   "배부르",
+   "배부른"
+  ],
+  "en": "full",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w255",
+  "ko": "외로운",
+  "tags": [
+   "외로",
+   "외로운"
+  ],
+  "en": "lonely",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w256",
+  "ko": "자랑스러운",
+  "tags": [
+   "자랑",
+   "자랑스러운"
+  ],
+  "en": "proud",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w257",
+  "ko": "고마운",
+  "tags": [
+   "고마",
+   "감사",
+   "고마운"
+  ],
+  "en": "thankful",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w258",
+  "ko": "속상한",
+  "tags": [
+   "속상",
+   "서운",
+   "속상한"
+  ],
+  "en": "upset",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w259",
+  "ko": "짜증 나는",
+  "tags": [
+   "짜증",
+   "짜증나는"
+  ],
+  "en": "annoyed",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w260",
+  "ko": "편안한",
+  "tags": [
+   "편안",
+   "편해",
+   "편안한"
+  ],
+  "en": "relaxed",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w261",
+  "ko": "미안한",
+  "tags": [
+   "미안",
+   "미안한"
+  ],
+  "en": "sorry",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w262",
+  "ko": "질투 나는",
+  "tags": [
+   "질투",
+   "부러",
+   "질투나는"
+  ],
+  "en": "jealous",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w263",
+  "ko": "감동받은",
+  "tags": [
+   "감동",
+   "감동받은"
+  ],
+  "en": "touched",
+  "past": null,
+  "group": "마음"
+ },
+ {
+  "id": "w264",
+  "ko": "큰",
+  "tags": [
+   "크다",
+   "큰",
+   "커다란"
+  ],
+  "en": "big",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w265",
+  "ko": "작은",
+  "tags": [
+   "작다",
+   "작은",
+   "작아",
+   "조그만"
+  ],
+  "en": "small",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w266",
+  "ko": "키 큰",
+  "tags": [
+   "키큰",
+   "키가커"
+  ],
+  "en": "tall",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w267",
+  "ko": "키 작은",
+  "tags": [
+   "키작",
+   "키가작",
+   "키작은"
+  ],
+  "en": "short",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w268",
+  "ko": "귀여운",
+  "tags": [
+   "귀여",
+   "귀엽",
+   "귀여운"
+  ],
+  "en": "cute",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w269",
+  "ko": "예쁜",
+  "tags": [
+   "예뻐",
+   "예쁘",
+   "예쁜"
+  ],
+  "en": "pretty",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w270",
+  "ko": "멋진",
+  "tags": [
+   "멋지",
+   "멋있",
+   "멋져",
+   "멋진"
+  ],
+  "en": "cool",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w271",
+  "ko": "잘생긴",
+  "tags": [
+   "잘생",
+   "잘생긴"
+  ],
+  "en": "handsome",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w272",
+  "ko": "힘센",
+  "tags": [
+   "힘세",
+   "힘이세",
+   "힘센"
+  ],
+  "en": "strong",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w273",
+  "ko": "빠른",
+  "tags": [
+   "빨라",
+   "빠르",
+   "빠른"
+  ],
+  "en": "fast",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w274",
+  "ko": "느린",
+  "tags": [
+   "느려",
+   "느리",
+   "느린"
+  ],
+  "en": "slow",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w275",
+  "ko": "착한",
+  "tags": [
+   "착해",
+   "착하",
+   "착한"
+  ],
+  "en": "kind",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w276",
+  "ko": "친절한",
+  "tags": [
+   "친절",
+   "상냥",
+   "친절한"
+  ],
+  "en": "friendly",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w277",
+  "ko": "웃긴",
+  "tags": [
+   "웃겨",
+   "웃기",
+   "웃긴"
+  ],
+  "en": "funny",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w278",
+  "ko": "똑똑한",
+  "tags": [
+   "똑똑",
+   "영리",
+   "똑똑한"
+  ],
+  "en": "smart",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w279",
+  "ko": "용감한",
+  "tags": [
+   "용감",
+   "용기",
+   "용감한"
+  ],
+  "en": "brave",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w280",
+  "ko": "조용한",
+  "tags": [
+   "조용",
+   "조용한"
+  ],
+  "en": "quiet",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w281",
+  "ko": "시끄러운",
+  "tags": [
+   "시끄",
+   "시끄러운"
+  ],
+  "en": "loud",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w282",
+  "ko": "부지런한",
+  "tags": [
+   "부지런",
+   "성실",
+   "부지런한"
+  ],
+  "en": "hardworking",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w283",
+  "ko": "게으른",
+  "tags": [
+   "게을",
+   "게으른"
+  ],
+  "en": "lazy",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w284",
+  "ko": "다정한",
+  "tags": [
+   "다정",
+   "따뜻한마음",
+   "다정한"
+  ],
+  "en": "sweet",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w285",
+  "ko": "엄격한",
+  "tags": [
+   "엄격",
+   "엄하",
+   "엄격한"
+  ],
+  "en": "strict",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w286",
+  "ko": "활발한",
+  "tags": [
+   "활발",
+   "에너지",
+   "활발한"
+  ],
+  "en": "energetic",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w287",
+  "ko": "장난꾸러기",
+  "tags": [
+   "장난꾸러기",
+   "장난"
+  ],
+  "en": "playful",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w288",
+  "ko": "털이 복슬복슬한",
+  "tags": [
+   "복슬",
+   "털이많",
+   "털이복슬복슬한"
+  ],
+  "en": "fluffy",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w289",
+  "ko": "통통한",
+  "tags": [
+   "통통",
+   "뚱뚱",
+   "통통한"
+  ],
+  "en": "chubby",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w290",
+  "ko": "나이 든",
+  "tags": [
+   "나이든",
+   "늙은"
+  ],
+  "en": "old",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w291",
+  "ko": "젊은",
+  "tags": [
+   "젊은",
+   "어린"
+  ],
+  "en": "young",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w292",
+  "ko": "새로운",
+  "tags": [
+   "새",
+   "새로운"
+  ],
+  "en": "new",
+  "past": null,
+  "group": "모습·성격"
+ },
+ {
+  "id": "w293",
+  "ko": "맛있는",
+  "tags": [
+   "맛있",
+   "맛나",
+   "맛있는"
+  ],
+  "en": "delicious",
+  "past": null,
+  "group": "맛·느낌"
+ },
+ {
+  "id": "w294",
+  "ko": "매운",
+  "tags": [
+   "매워",
+   "맵",
+   "매운"
+  ],
+  "en": "spicy",
+  "past": null,
+  "group": "맛·느낌"
+ },
+ {
+  "id": "w295",
+  "ko": "단",
+  "tags": [
+   "달아",
+   "달콤",
+   "단맛",
+   "달다",
+   "단"
+  ],
+  "en": "sweet",
+  "past": null,
+  "group": "맛·느낌"
+ },
+ {
+  "id": "w296",
+  "ko": "짠",
+  "tags": [
+   "짜다",
+   "짭짤",
+   "짠"
+  ],
+  "en": "salty",
+  "past": null,
+  "group": "맛·느낌"
+ },
+ {
+  "id": "w297",
+  "ko": "신",
+  "tags": [
+   "시다",
+   "새콤",
+   "신맛",
+   "신"
+  ],
+  "en": "sour",
+  "past": null,
+  "group": "맛·느낌"
+ },
+ {
+  "id": "w298",
+  "ko": "쓴",
+  "tags": [
+   "쓰다",
+   "쓴맛",
+   "쓴"
+  ],
+  "en": "bitter",
+  "past": null,
+  "group": "맛·느낌"
+ },
+ {
+  "id": "w299",
+  "ko": "바삭한",
+  "tags": [
+   "바삭",
+   "바삭한"
+  ],
+  "en": "crunchy",
+  "past": null,
+  "group": "맛·느낌"
+ },
+ {
+  "id": "w300",
+  "ko": "쫄깃한",
+  "tags": [
+   "쫄깃",
+   "쫀득",
+   "쫄깃한"
+  ],
+  "en": "chewy",
+  "past": null,
+  "group": "맛·느낌"
+ },
+ {
+  "id": "w301",
+  "ko": "부드러운",
+  "tags": [
+   "부드러",
+   "부드러운"
+  ],
+  "en": "soft",
+  "past": null,
+  "group": "맛·느낌"
+ },
+ {
+  "id": "w302",
+  "ko": "뜨거운",
+  "tags": [
+   "뜨거",
+   "뜨거운"
+  ],
+  "en": "hot",
+  "past": null,
+  "group": "맛·느낌"
+ },
+ {
+  "id": "w303",
+  "ko": "차가운",
+  "tags": [
+   "차가",
+   "차가운"
+  ],
+  "en": "cold",
+  "past": null,
+  "group": "맛·느낌"
+ },
+ {
+  "id": "w304",
+  "ko": "따뜻한",
+  "tags": [
+   "따뜻",
+   "따듯",
+   "따뜻한"
+  ],
+  "en": "warm",
+  "past": null,
+  "group": "맛·느낌"
+ },
+ {
+  "id": "w305",
+  "ko": "시원한",
+  "tags": [
+   "시원",
+   "시원한"
+  ],
+  "en": "cool",
+  "past": null,
+  "group": "맛·느낌"
+ },
+ {
+  "id": "w306",
+  "ko": "딱딱한",
+  "tags": [
+   "딱딱",
+   "딱딱한"
+  ],
+  "en": "hard",
+  "past": null,
+  "group": "맛·느낌"
+ },
+ {
+  "id": "w307",
+  "ko": "말랑한",
+  "tags": [
+   "말랑",
+   "몰랑",
+   "말랑한"
+  ],
+  "en": "squishy",
+  "past": null,
+  "group": "맛·느낌"
+ },
+ {
+  "id": "w308",
+  "ko": "끈적한",
+  "tags": [
+   "끈적",
+   "끈적한"
+  ],
+  "en": "sticky",
+  "past": null,
+  "group": "맛·느낌"
+ },
+ {
+  "id": "w309",
+  "ko": "폭신한",
+  "tags": [
+   "폭신",
+   "푹신",
+   "폭신한"
+  ],
+  "en": "fluffy",
+  "past": null,
+  "group": "맛·느낌"
+ },
+ {
+  "id": "w310",
+  "ko": "미끄러운",
+  "tags": [
+   "미끄러",
+   "미끄러운"
+  ],
+  "en": "slippery",
+  "past": null,
+  "group": "맛·느낌"
+ },
+ {
+  "id": "w311",
+  "ko": "봄",
+  "tags": [
+   "봄"
+  ],
+  "en": "spring",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w312",
+  "ko": "여름",
+  "tags": [
+   "여름"
+  ],
+  "en": "summer",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w313",
+  "ko": "가을",
+  "tags": [
+   "가을"
+  ],
+  "en": "fall",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w314",
+  "ko": "겨울",
+  "tags": [
+   "겨울"
+  ],
+  "en": "winter",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w315",
+  "ko": "눈",
+  "tags": [
+   "눈",
+   "눈이와"
+  ],
+  "en": "snow",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w316",
+  "ko": "비",
+  "tags": [
+   "비",
+   "비가와"
+  ],
+  "en": "rain",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w317",
+  "ko": "바람",
+  "tags": [
+   "바람"
+  ],
+  "en": "wind",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w318",
+  "ko": "햇빛",
+  "tags": [
+   "햇빛",
+   "해",
+   "햇살"
+  ],
+  "en": "sunshine",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w319",
+  "ko": "무지개",
+  "tags": [
+   "무지개"
+  ],
+  "en": "rainbow",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w320",
+  "ko": "맑은 날",
+  "tags": [
+   "맑은",
+   "화창",
+   "맑은날"
+  ],
+  "en": "a sunny day",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w321",
+  "ko": "흐린 날",
+  "tags": [
+   "흐린",
+   "흐려",
+   "흐린날"
+  ],
+  "en": "a cloudy day",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w322",
+  "ko": "아침",
+  "tags": [
+   "아침"
+  ],
+  "en": "morning",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w323",
+  "ko": "점심",
+  "tags": [
+   "점심"
+  ],
+  "en": "lunch",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w324",
+  "ko": "저녁",
+  "tags": [
+   "저녁"
+  ],
+  "en": "dinner",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w325",
+  "ko": "밤",
+  "tags": [
+   "밤"
+  ],
+  "en": "night",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w326",
+  "ko": "주말",
+  "tags": [
+   "주말"
+  ],
+  "en": "the weekend",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w327",
+  "ko": "생일",
+  "tags": [
+   "생일"
+  ],
+  "en": "my birthday",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w328",
+  "ko": "크리스마스",
+  "tags": [
+   "크리스마스"
+  ],
+  "en": "Christmas",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w329",
+  "ko": "설날",
+  "tags": [
+   "설날",
+   "설"
+  ],
+  "en": "Lunar New Year",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w330",
+  "ko": "추석",
+  "tags": [
+   "추석"
+  ],
+  "en": "Chuseok",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w331",
+  "ko": "어제",
+  "tags": [
+   "어제"
+  ],
+  "en": "yesterday",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w332",
+  "ko": "오늘",
+  "tags": [
+   "오늘"
+  ],
+  "en": "today",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w333",
+  "ko": "내일",
+  "tags": [
+   "내일"
+  ],
+  "en": "tomorrow",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w334",
+  "ko": "매일",
+  "tags": [
+   "매일",
+   "날마다",
+   "맨날"
+  ],
+  "en": "every day",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w335",
+  "ko": "가끔",
+  "tags": [
+   "가끔"
+  ],
+  "en": "sometimes",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w336",
+  "ko": "항상",
+  "tags": [
+   "항상",
+   "늘",
+   "언제나"
+  ],
+  "en": "always",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w337",
+  "ko": "작년",
+  "tags": [
+   "작년"
+  ],
+  "en": "last year",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w338",
+  "ko": "내년",
+  "tags": [
+   "내년"
+  ],
+  "en": "next year",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w339",
+  "ko": "방과 후",
+  "tags": [
+   "방과후",
+   "학교끝나고"
+  ],
+  "en": "after school",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w340",
+  "ko": "빨간색",
+  "tags": [
+   "빨간",
+   "빨강",
+   "빨간색"
+  ],
+  "en": "red",
+  "past": null,
+  "group": "색깔"
+ },
+ {
+  "id": "w341",
+  "ko": "주황색",
+  "tags": [
+   "주황",
+   "주황색"
+  ],
+  "en": "orange",
+  "past": null,
+  "group": "색깔"
+ },
+ {
+  "id": "w342",
+  "ko": "노란색",
+  "tags": [
+   "노란",
+   "노랑",
+   "노란색"
+  ],
+  "en": "yellow",
+  "past": null,
+  "group": "색깔"
+ },
+ {
+  "id": "w343",
+  "ko": "초록색",
+  "tags": [
+   "초록",
+   "녹색",
+   "초록색"
+  ],
+  "en": "green",
+  "past": null,
+  "group": "색깔"
+ },
+ {
+  "id": "w344",
+  "ko": "파란색",
+  "tags": [
+   "파란",
+   "파랑",
+   "파란색"
+  ],
+  "en": "blue",
+  "past": null,
+  "group": "색깔"
+ },
+ {
+  "id": "w345",
+  "ko": "하늘색",
+  "tags": [
+   "하늘색"
+  ],
+  "en": "sky blue",
+  "past": null,
+  "group": "색깔"
+ },
+ {
+  "id": "w346",
+  "ko": "보라색",
+  "tags": [
+   "보라",
+   "보라색"
+  ],
+  "en": "purple",
+  "past": null,
+  "group": "색깔"
+ },
+ {
+  "id": "w347",
+  "ko": "분홍색",
+  "tags": [
+   "분홍",
+   "핑크",
+   "분홍색"
+  ],
+  "en": "pink",
+  "past": null,
+  "group": "색깔"
+ },
+ {
+  "id": "w348",
+  "ko": "갈색",
+  "tags": [
+   "갈색"
+  ],
+  "en": "brown",
+  "past": null,
+  "group": "색깔"
+ },
+ {
+  "id": "w349",
+  "ko": "검은색",
+  "tags": [
+   "검은",
+   "검정",
+   "검은색"
+  ],
+  "en": "black",
+  "past": null,
+  "group": "색깔"
+ },
+ {
+  "id": "w350",
+  "ko": "하얀색",
+  "tags": [
+   "하얀",
+   "흰색",
+   "하양",
+   "하얀색"
+  ],
+  "en": "white",
+  "past": null,
+  "group": "색깔"
+ },
+ {
+  "id": "w351",
+  "ko": "회색",
+  "tags": [
+   "회색"
+  ],
+  "en": "gray",
+  "past": null,
+  "group": "색깔"
+ },
+ {
+  "id": "w352",
+  "ko": "금색",
+  "tags": [
+   "금색"
+  ],
+  "en": "gold",
+  "past": null,
+  "group": "색깔"
+ },
+ {
+  "id": "w353",
+  "ko": "가다",
+  "tags": [
+   "가다",
+   "가요",
+   "갔",
+   "가서"
+  ],
+  "en": "go",
+  "past": "went",
+  "group": "하는 말"
+ },
+ {
+  "id": "w354",
+  "ko": "오다",
+  "tags": [
+   "오다",
+   "왔"
+  ],
+  "en": "come",
+  "past": "came",
+  "group": "하는 말"
+ },
+ {
+  "id": "w355",
+  "ko": "먹다",
+  "tags": [
+   "먹다",
+   "먹어",
+   "먹었"
+  ],
+  "en": "eat",
+  "past": "ate",
+  "group": "하는 말"
+ },
+ {
+  "id": "w356",
+  "ko": "마시다",
+  "tags": [
+   "마시",
+   "마시다"
+  ],
+  "en": "drink",
+  "past": "drank",
+  "group": "하는 말"
+ },
+ {
+  "id": "w357",
+  "ko": "보다",
+  "tags": [
+   "보다",
+   "봤"
+  ],
+  "en": "see",
+  "past": "saw",
+  "group": "하는 말"
+ },
+ {
+  "id": "w358",
+  "ko": "보다(영상·경기)",
+  "tags": [
+   "구경",
+   "시청",
+   "티비",
+   "보다(영상·경기)"
+  ],
+  "en": "watch",
+  "past": "watched",
+  "group": "하는 말"
+ },
+ {
+  "id": "w359",
+  "ko": "놀다",
+  "tags": [
+   "놀다",
+   "놀아",
+   "놀았"
+  ],
+  "en": "play",
+  "past": "played",
+  "group": "하는 말"
+ },
+ {
+  "id": "w360",
+  "ko": "자다",
+  "tags": [
+   "자다",
+   "잤",
+   "잠"
+  ],
+  "en": "sleep",
+  "past": "slept",
+  "group": "하는 말"
+ },
+ {
+  "id": "w361",
+  "ko": "일어나다",
+  "tags": [
+   "일어나",
+   "일어나다"
+  ],
+  "en": "wake up",
+  "past": "woke up",
+  "group": "하는 말"
+ },
+ {
+  "id": "w362",
+  "ko": "달리다",
+  "tags": [
+   "달리",
+   "뛰어가",
+   "달리다"
+  ],
+  "en": "run",
+  "past": "ran",
+  "group": "하는 말"
+ },
+ {
+  "id": "w363",
+  "ko": "걷다",
+  "tags": [
+   "걷다",
+   "걸었"
+  ],
+  "en": "walk",
+  "past": "walked",
+  "group": "하는 말"
+ },
+ {
+  "id": "w364",
+  "ko": "뛰다",
+  "tags": [
+   "점프",
+   "뛰다"
+  ],
+  "en": "jump",
+  "past": "jumped",
+  "group": "하는 말"
+ },
+ {
+  "id": "w365",
+  "ko": "수영하다",
+  "tags": [
+   "수영하",
+   "수영하다"
+  ],
+  "en": "swim",
+  "past": "swam",
+  "group": "하는 말"
+ },
+ {
+  "id": "w366",
+  "ko": "타다",
+  "tags": [
+   "타다",
+   "탔"
+  ],
+  "en": "ride",
+  "past": "rode",
+  "group": "하는 말"
+ },
+ {
+  "id": "w367",
+  "ko": "만들다",
+  "tags": [
+   "만들",
+   "만들다"
+  ],
+  "en": "make",
+  "past": "made",
+  "group": "하는 말"
+ },
+ {
+  "id": "w368",
+  "ko": "그리다",
+  "tags": [
+   "그리다",
+   "그렸"
+  ],
+  "en": "draw",
+  "past": "drew",
+  "group": "하는 말"
+ },
+ {
+  "id": "w369",
+  "ko": "읽다",
+  "tags": [
+   "읽다",
+   "읽었"
+  ],
+  "en": "read",
+  "past": "read",
+  "group": "하는 말"
+ },
+ {
+  "id": "w370",
+  "ko": "쓰다",
+  "tags": [
+   "쓰다",
+   "썼"
+  ],
+  "en": "write",
+  "past": "wrote",
+  "group": "하는 말"
+ },
+ {
+  "id": "w371",
+  "ko": "노래하다",
+  "tags": [
+   "노래하",
+   "노래불",
+   "노래하다"
+  ],
+  "en": "sing",
+  "past": "sang",
+  "group": "하는 말"
+ },
+ {
+  "id": "w372",
+  "ko": "춤추다",
+  "tags": [
+   "춤추",
+   "춤췄",
+   "춤추다"
+  ],
+  "en": "dance",
+  "past": "danced",
+  "group": "하는 말"
+ },
+ {
+  "id": "w373",
+  "ko": "웃다",
+  "tags": [
+   "웃다",
+   "웃었"
+  ],
+  "en": "laugh",
+  "past": "laughed",
+  "group": "하는 말"
+ },
+ {
+  "id": "w374",
+  "ko": "미소 짓다",
+  "tags": [
+   "미소",
+   "미소짓다"
+  ],
+  "en": "smile",
+  "past": "smiled",
+  "group": "하는 말"
+ },
+ {
+  "id": "w375",
+  "ko": "울다",
+  "tags": [
+   "울다",
+   "울었"
+  ],
+  "en": "cry",
+  "past": "cried",
+  "group": "하는 말"
+ },
+ {
+  "id": "w376",
+  "ko": "사다",
+  "tags": [
+   "사다",
+   "샀"
+  ],
+  "en": "buy",
+  "past": "bought",
+  "group": "하는 말"
+ },
+ {
+  "id": "w377",
+  "ko": "주다",
+  "tags": [
+   "주다",
+   "줬"
+  ],
+  "en": "give",
+  "past": "gave",
+  "group": "하는 말"
+ },
+ {
+  "id": "w378",
+  "ko": "받다",
+  "tags": [
+   "받다",
+   "받았"
+  ],
+  "en": "get",
+  "past": "got",
+  "group": "하는 말"
+ },
+ {
+  "id": "w379",
+  "ko": "찾다",
+  "tags": [
+   "찾다",
+   "찾았"
+  ],
+  "en": "find",
+  "past": "found",
+  "group": "하는 말"
+ },
+ {
+  "id": "w380",
+  "ko": "잃어버리다",
+  "tags": [
+   "잃어버",
+   "잃었",
+   "잃어버리다"
+  ],
+  "en": "lose",
+  "past": "lost",
+  "group": "하는 말"
+ },
+ {
+  "id": "w381",
+  "ko": "넘어지다",
+  "tags": [
+   "넘어지",
+   "넘어졌",
+   "넘어지다"
+  ],
+  "en": "fall down",
+  "past": "fell down",
+  "group": "하는 말"
+ },
+ {
+  "id": "w382",
+  "ko": "다치다",
+  "tags": [
+   "다치",
+   "다쳤",
+   "다치다"
+  ],
+  "en": "get hurt",
+  "past": "got hurt",
+  "group": "하는 말"
+ },
+ {
+  "id": "w383",
+  "ko": "이기다",
+  "tags": [
+   "이기",
+   "이겼",
+   "이기다"
+  ],
+  "en": "win",
+  "past": "won",
+  "group": "하는 말"
+ },
+ {
+  "id": "w384",
+  "ko": "싸우다",
+  "tags": [
+   "싸우",
+   "싸웠",
+   "싸우다"
+  ],
+  "en": "fight",
+  "past": "fought",
+  "group": "하는 말"
+ },
+ {
+  "id": "w385",
+  "ko": "돕다",
+  "tags": [
+   "돕다",
+   "도와"
+  ],
+  "en": "help",
+  "past": "helped",
+  "group": "하는 말"
+ },
+ {
+  "id": "w386",
+  "ko": "요리하다",
+  "tags": [
+   "요리하",
+   "요리하다"
+  ],
+  "en": "cook",
+  "past": "cooked",
+  "group": "하는 말"
+ },
+ {
+  "id": "w387",
+  "ko": "청소하다",
+  "tags": [
+   "청소",
+   "청소하다"
+  ],
+  "en": "clean",
+  "past": "cleaned",
+  "group": "하는 말"
+ },
+ {
+  "id": "w388",
+  "ko": "공부하다",
+  "tags": [
+   "공부",
+   "공부하다"
+  ],
+  "en": "study",
+  "past": "studied",
+  "group": "하는 말"
+ },
+ {
+  "id": "w389",
+  "ko": "배우다",
+  "tags": [
+   "배우",
+   "배웠",
+   "배우다"
+  ],
+  "en": "learn",
+  "past": "learned",
+  "group": "하는 말"
+ },
+ {
+  "id": "w390",
+  "ko": "가르치다",
+  "tags": [
+   "가르치",
+   "가르쳐",
+   "가르치다"
+  ],
+  "en": "teach",
+  "past": "taught",
+  "group": "하는 말"
+ },
+ {
+  "id": "w391",
+  "ko": "만나다",
+  "tags": [
+   "만나",
+   "만났",
+   "만나다"
+  ],
+  "en": "meet",
+  "past": "met",
+  "group": "하는 말"
+ },
+ {
+  "id": "w392",
+  "ko": "말하다",
+  "tags": [
+   "말하",
+   "말했",
+   "말하다"
+  ],
+  "en": "say",
+  "past": "said",
+  "group": "하는 말"
+ },
+ {
+  "id": "w393",
+  "ko": "이야기하다",
+  "tags": [
+   "이야기",
+   "얘기",
+   "이야기하다"
+  ],
+  "en": "talk",
+  "past": "talked",
+  "group": "하는 말"
+ },
+ {
+  "id": "w394",
+  "ko": "듣다",
+  "tags": [
+   "듣다",
+   "들었"
+  ],
+  "en": "listen",
+  "past": "listened",
+  "group": "하는 말"
+ },
+ {
+  "id": "w395",
+  "ko": "보여주다",
+  "tags": [
+   "보여주",
+   "보여줬",
+   "보여주다"
+  ],
+  "en": "show",
+  "past": "showed",
+  "group": "하는 말"
+ },
+ {
+  "id": "w396",
+  "ko": "안아 주다",
+  "tags": [
+   "안아",
+   "포옹",
+   "안아주다"
+  ],
+  "en": "hug",
+  "past": "hugged",
+  "group": "하는 말"
+ },
+ {
+  "id": "w397",
+  "ko": "생각하다",
+  "tags": [
+   "생각하",
+   "생각하다"
+  ],
+  "en": "think",
+  "past": "thought",
+  "group": "하는 말"
+ },
+ {
+  "id": "w398",
+  "ko": "알다",
+  "tags": [
+   "알다",
+   "알았"
+  ],
+  "en": "know",
+  "past": "knew",
+  "group": "하는 말"
+ },
+ {
+  "id": "w399",
+  "ko": "기다리다",
+  "tags": [
+   "기다리",
+   "기다렸",
+   "기다리다"
+  ],
+  "en": "wait",
+  "past": "waited",
+  "group": "하는 말"
+ },
+ {
+  "id": "w400",
+  "ko": "시작하다",
+  "tags": [
+   "시작",
+   "시작하다"
+  ],
+  "en": "start",
+  "past": "started",
+  "group": "하는 말"
+ },
+ {
+  "id": "w401",
+  "ko": "끝내다",
+  "tags": [
+   "끝내",
+   "끝났",
+   "끝내다"
+  ],
+  "en": "finish",
+  "past": "finished",
+  "group": "하는 말"
+ },
+ {
+  "id": "w402",
+  "ko": "열다",
+  "tags": [
+   "열다",
+   "열었"
+  ],
+  "en": "open",
+  "past": "opened",
+  "group": "하는 말"
+ },
+ {
+  "id": "w403",
+  "ko": "닫다",
+  "tags": [
+   "닫다",
+   "닫았"
+  ],
+  "en": "close",
+  "past": "closed",
+  "group": "하는 말"
+ },
+ {
+  "id": "w404",
+  "ko": "던지다",
+  "tags": [
+   "던지",
+   "던지다"
+  ],
+  "en": "throw",
+  "past": "threw",
+  "group": "하는 말"
+ },
+ {
+  "id": "w405",
+  "ko": "잡다",
+  "tags": [
+   "잡다",
+   "잡았"
+  ],
+  "en": "catch",
+  "past": "caught",
+  "group": "하는 말"
+ },
+ {
+  "id": "w406",
+  "ko": "차다",
+  "tags": [
+   "차다",
+   "찼"
+  ],
+  "en": "kick",
+  "past": "kicked",
+  "group": "하는 말"
+ },
+ {
+  "id": "w407",
+  "ko": "숨다",
+  "tags": [
+   "숨다",
+   "숨었"
+  ],
+  "en": "hide",
+  "past": "hid",
+  "group": "하는 말"
+ },
+ {
+  "id": "w408",
+  "ko": "날다",
+  "tags": [
+   "날다",
+   "날았"
+  ],
+  "en": "fly",
+  "past": "flew",
+  "group": "하는 말"
+ },
+ {
+  "id": "w409",
+  "ko": "돌보다",
+  "tags": [
+   "돌보",
+   "키우",
+   "돌보다"
+  ],
+  "en": "take care of",
+  "past": "took care of",
+  "group": "하는 말"
+ },
+ {
+  "id": "w410",
+  "ko": "산책하다",
+  "tags": [
+   "산책",
+   "산책하다"
+  ],
+  "en": "go for a walk",
+  "past": "went for a walk",
+  "group": "하는 말"
+ },
+ {
+  "id": "w411",
+  "ko": "여행 가다",
+  "tags": [
+   "여행가",
+   "여행가다"
+  ],
+  "en": "go on a trip",
+  "past": "went on a trip",
+  "group": "하는 말"
+ },
+ {
+  "id": "w412",
+  "ko": "캠핑 가다",
+  "tags": [
+   "캠핑가",
+   "캠핑가다"
+  ],
+  "en": "go camping",
+  "past": "went camping",
+  "group": "하는 말"
+ },
+ {
+  "id": "w413",
+  "ko": "쇼핑하다",
+  "tags": [
+   "쇼핑하",
+   "쇼핑하다"
+  ],
+  "en": "go shopping",
+  "past": "went shopping",
+  "group": "하는 말"
+ },
+ {
+  "id": "w414",
+  "ko": "게임하다",
+  "tags": [
+   "게임하",
+   "게임하다"
+  ],
+  "en": "play games",
+  "past": "played games",
+  "group": "하는 말"
+ },
+ {
+  "id": "w415",
+  "ko": "영화 보다",
+  "tags": [
+   "영화보",
+   "영화보다"
+  ],
+  "en": "watch a movie",
+  "past": "watched a movie",
+  "group": "하는 말"
+ },
+ {
+  "id": "w416",
+  "ko": "사진 찍다",
+  "tags": [
+   "사진찍",
+   "사진찍다"
+  ],
+  "en": "take pictures",
+  "past": "took pictures",
+  "group": "하는 말"
+ },
+ {
+  "id": "w417",
+  "ko": "전화하다",
+  "tags": [
+   "전화",
+   "전화하다"
+  ],
+  "en": "call",
+  "past": "called",
+  "group": "하는 말"
+ },
+ {
+  "id": "w418",
+  "ko": "좋아하다",
+  "tags": [
+   "좋아하",
+   "좋아해",
+   "좋아하다"
+  ],
+  "en": "like",
+  "past": "liked",
+  "group": "하는 말"
+ },
+ {
+  "id": "w419",
+  "ko": "사랑하다",
+  "tags": [
+   "사랑하",
+   "사랑해",
+   "사랑하다"
+  ],
+  "en": "love",
+  "past": "loved",
+  "group": "하는 말"
+ },
+ {
+  "id": "w420",
+  "ko": "원하다",
+  "tags": [
+   "원하",
+   "원해",
+   "원하다"
+  ],
+  "en": "want",
+  "past": "wanted",
+  "group": "하는 말"
+ },
+ {
+  "id": "w421",
+  "ko": "느끼다",
+  "tags": [
+   "느끼",
+   "느꼈",
+   "느끼다"
+  ],
+  "en": "feel",
+  "past": "felt",
+  "group": "하는 말"
+ },
+ {
+  "id": "w422",
+  "ko": "돌아오다",
+  "tags": [
+   "돌아오",
+   "돌아왔",
+   "돌아오다"
+  ],
+  "en": "come back",
+  "past": "came back",
+  "group": "하는 말"
+ },
+ {
+  "id": "w423",
+  "ko": "깨뜨리다",
+  "tags": [
+   "깨뜨",
+   "깨졌",
+   "깨뜨리다"
+  ],
+  "en": "break",
+  "past": "broke",
+  "group": "하는 말"
+ },
+ {
+  "id": "w424",
+  "ko": "쏟다",
+  "tags": [
+   "쏟다",
+   "쏟았",
+   "흘렸"
+  ],
+  "en": "spill",
+  "past": "spilled",
+  "group": "하는 말"
+ },
+ {
+  "id": "w425",
+  "ko": "떨어뜨리다",
+  "tags": [
+   "떨어뜨",
+   "떨어뜨리다"
+  ],
+  "en": "drop",
+  "past": "dropped",
+  "group": "하는 말"
+ },
+ {
+  "id": "w426",
+  "ko": "꿈꾸다",
+  "tags": [
+   "꿈꾸",
+   "꿈을꿨",
+   "꿈꾸다"
+  ],
+  "en": "dream",
+  "past": "dreamed",
+  "group": "하는 말"
+ },
+ {
+  "id": "w427",
+  "ko": "자라다",
+  "tags": [
+   "자라",
+   "컸",
+   "자라다"
+  ],
+  "en": "grow",
+  "past": "grew",
+  "group": "하는 말"
+ },
+ {
+  "id": "w428",
+  "ko": "쉬다",
+  "tags": [
+   "쉬다",
+   "쉬었"
+  ],
+  "en": "rest",
+  "past": "rested",
+  "group": "하는 말"
+ }
+]

@@ -1,0 +1,18 @@
+{
+  "name": "say-it-your-way",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:preview": "vite build --mode preview"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5",
+    "vite-plugin-singlefile": "^2.2.0"
+  },
+  "dependencies": {
+    "firebase": "^11.8.1"
+  }
+}

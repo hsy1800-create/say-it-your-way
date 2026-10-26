@@ -37,7 +37,7 @@ const app = {
   }
   // 아이 링크(?n=7)로 왔으면 바로 그 번호로 들어간다.
   const seat = seatFromUrl();
-  if (seat) {
+  if (seat !== null) {
     if (app.session?.role === 'student' && app.session.seat === seat) { app.go('student'); return; }
     const err = await enterSeat(app, seat);
     if (err) app.go('home', { msg: err });

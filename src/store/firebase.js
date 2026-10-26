@@ -52,7 +52,8 @@ export async function createFirebaseStore() {
     // 반은 콘솔에서 한 번 만들어 두고 앱에서는 만들지 않는다.
     async ensureRoom() {},
     async joinClass(code, nickname, seat) {
-      if (auth.currentUser && !auth.currentUser.isAnonymous) throw new Error('teacher-account');
+      // 선생님 계정으로는 아이 번호에 들어가지 않는다(0번 시범 칸만 된다).
+      if (auth.currentUser && !auth.currentUser.isAnonymous && seat !== 0) throw new Error('teacher-account');
       const u = await ensureStudent();
       const c = await getDoc(doc(db, 'classes', code));
       if (!c.exists()) throw new Error('no-class');

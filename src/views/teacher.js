@@ -4,7 +4,7 @@ import { speak, speakAll, stop } from '../lib/tts.js';
 import { norm } from '../lib/search.js';
 import { createBook } from './ebook.js';
 import { speakButtons, brandMark } from './parts.js';
-import { SEATS, seatLink } from '../config.js';
+import { SEATS, DEMO_SEAT, seatName, seatLink } from '../config.js';
 
 const TABS = [
   ['board', '관전판'],
@@ -69,11 +69,15 @@ export function renderTeacher(app) {
   const book = () => books.find((b) => b.lesson === lesson()) || books[0];
   // 번호 칸: 아이(uid)마다 번호가 있다. 한 번호로 두 곳에서 들어오면 같은 줄에 모아 가장 최근 것을 보여 준다.
   const SEAT_LIST = Array.from({ length: SEATS }, (_, i) => i + 1);
-  const seatNum = (x) => x?.seat || parseInt(x?.nickname, 10) || null;
+  const seatNum = (x) => {
+    if (Number.isInteger(x?.seat)) return x.seat;
+    const n = parseInt(x?.nickname, 10);
+    return Number.isNaN(n) ? null : n;
+  };
   const seatByUid = () => {
     const m = new Map();
-    for (const s of students) if (seatNum(s)) m.set(s.uid, seatNum(s));
-    for (const e of entries) if (!m.has(e.uid) && seatNum(e)) m.set(e.uid, seatNum(e));
+    for (const s of students) if (seatNum(s) !== null) m.set(s.uid, seatNum(s));
+    for (const e of entries) if (!m.has(e.uid) && seatNum(e) !== null) m.set(e.uid, seatNum(e));
     return m;
   };
   const uidsOf = (seat) => [...seatByUid()].filter(([, n]) => n === seat).map(([u]) => u);
@@ -142,9 +146,9 @@ export function renderTeacher(app) {
   let missSig = '';
 
   function renderSummary() {
-    const joined = joinedSeats().size;
+    const joined = [...joinedSeats()].filter((n) => n !== DEMO_SEAT).length;
     let done = 0;
-    for (const n of SEAT_LIST) for (let p = 1; p <= 6; p++) if (stateOf(entryAt(n, p)) === 'done') done++;
+    for (const n of SEAT_LIST) for (let p = 1; p <= 6; p++) if (stateOf(entryAt(n, p)) === 'done') done++; // 0번은 세지 않는다
     const misses = missGroups().length;
     fill(summary, 
       h('span', { class: 'chip' }, `들어온 학생 ${joined} / ${SEATS}명`),
@@ -156,10 +160,12 @@ export function renderTeacher(app) {
   function renderBoard() {
     const now = Date.now();
     const joined = joinedSeats();
+    // 0번(선생님 시범)은 들어왔을 때만 맨 위에 보여 준다.
+    const rows = joined.has(DEMO_SEAT) ? [DEMO_SEAT, ...SEAT_LIST] : SEAT_LIST;
     fill(boardWrap, h('table', { class: 'board' },
       h('thead', null, h('tr', null, h('th', { scope: 'col' }, '학생'), [1, 2, 3, 4, 5, 6].map((p) => h('th', { scope: 'col' }, `${p}쪽`)))),
-      h('tbody', null, SEAT_LIST.map((n) => h('tr', { class: joined.has(n) ? '' : 'away' },
-        h('td', { class: 'name' }, `${n}번`,
+      h('tbody', null, rows.map((n) => h('tr', { class: (joined.has(n) ? '' : 'away') + (n === DEMO_SEAT ? ' demo-seat' : '') },
+        h('td', { class: 'name' }, seatName(n),
           joined.has(n) ? null : h('div', { class: 'small muted' }, '아직'),
           uidsOf(n).length > 1 ? h('div', null, h('span', { class: 'chip', title: '같은 번호로 두 곳 이상에서 들어왔어요' }, '두 곳')) : null),
         [1, 2, 3, 4, 5, 6].map((p) => {
@@ -169,7 +175,7 @@ export function renderTeacher(app) {
           const isSel = sel && sel.seat === n && sel.page === p;
           return h('td', {
             class: `cell state-${state}${isSel ? ' sel' : ''}`, tabindex: '0',
-            'aria-label': `${n}번 ${p}쪽`,
+            'aria-label': `${seatName(n)} ${p}쪽`,
             onclick: () => select(n, p),
             onkeydown: (ev) => { if (ev.key === 'Enter') select(n, p); },
           },
@@ -199,7 +205,7 @@ export function renderTeacher(app) {
     const e = entryAt(sel.seat, sel.page);
     const q = book().pages[sel.page - 1].q;
     fill(detailInfo, 
-      h('div', { class: 'row' }, h('h3', null, `${sel.seat}번 · ${sel.page}쪽`), h('span', { class: 'spacer' }), e?.updatedAt ? h('span', { class: 'small muted' }, ago(e.updatedAt)) : null),
+      h('div', { class: 'row' }, h('h3', null, `${seatName(sel.seat)} · ${sel.page}쪽`), h('span', { class: 'spacer' }), e?.updatedAt ? h('span', { class: 'small muted' }, ago(e.updatedAt)) : null),
       h('p', { class: 'small muted' }, `생각 질문: ${q}`),
       h('div', null, h('div', { class: 'small muted' }, e?.free != null ? '문장 · 직접 고쳐 씀' : `문장 · ${({ 1: '★ 쉽게', 2: '★★ 선생님 책처럼', 3: '★★★ 도전' })[e?.level || '2']}`),
         stateOf(e) !== 'empty' ? h('div', { class: 'row' }, h('p', { class: 'en', style: { flex: '1', minWidth: '0' } }, withGaps(e.en)), speakButtons(e.en.replace(/___/g, ''))) : h('p', null, uids.length ? '아직 없어요' : '아직 이 번호로 들어온 아이가 없어요')),
@@ -281,11 +287,18 @@ export function renderTeacher(app) {
   function linksView() {
     const joined = joinedSeats();
     const all = SEAT_LIST.map((n) => `${n}번: ${seatLink(n)}`).join('\n');
+    const demoRow = h('div', { class: 'card link-row demo-link' },
+      h('b', { class: 'seat-no' }, '0번'),
+      h('div', { class: 'stack', style: { gap: '2px', flex: '1', minWidth: '0' } },
+        h('span', null, '선생님 시범용 · 화면 공유로 아이들에게 쓰는 법을 보여 줄 때'),
+        h('a', { class: 'url', href: seatLink(DEMO_SEAT), target: '_blank', rel: 'noopener' }, seatLink(DEMO_SEAT))),
+      h('a', { class: 'btn small primary', href: seatLink(DEMO_SEAT), target: '_blank', rel: 'noopener' }, '열기'));
     return h('div', { class: 'stack' },
       h('div', { class: 'row' },
         h('h2', null, '학생 링크'),
         h('span', { class: 'spacer' }),
         h('button', { class: 'btn primary', type: 'button', onclick: () => copyText(all, `${SEATS}개를 모두 복사했어요.`) }, `${SEATS}개 모두 복사`)),
+      demoRow,
       h('p', { class: 'muted small' }, '아이마다 자기 번호 링크를 보내 주세요. 누르면 로그인 없이 바로 그 번호 화면이 열려요. 링크를 아는 사람은 누구나 들어올 수 있으니 우리 반 아이들에게만 보내요.'),
       h('div', { class: 'card links' }, SEAT_LIST.map((n) => h('div', { class: 'link-row' },
         h('b', { class: 'seat-no' }, `${n}번`),
@@ -297,7 +310,7 @@ export function renderTeacher(app) {
   // ---------- 문장 벽 ----------
   function wallView() {
     const list = entries.filter((e) => e.shared && e.lesson === lesson())
-      .sort((a, b) => (seatNum(a) || 99) - (seatNum(b) || 99) || byName(a.nickname, b.nickname) || a.page - b.page);
+      .sort((a, b) => (seatNum(a) ?? 99) - (seatNum(b) ?? 99) || byName(a.nickname, b.nickname) || a.page - b.page);
     const cards = list.map((e) => h('div', { class: 'card wall-card' },
       h('div', { class: 'row small muted' }, h('span', null, `${e.nickname} · ${e.page}쪽`)),
       h('p', { class: 'en' }, e.en),

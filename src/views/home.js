@@ -1,11 +1,11 @@
 import { h, toast, fill } from '../lib/dom.js';
 import { brandMark } from './parts.js';
-import { ROOM, SEATS } from '../config.js';
+import { ROOM, SEATS, DEMO_SEAT, seatName, seatLink } from '../config.js';
 
 // 번호로 바로 들어간다. 링크(?n=7)로 왔을 때도 이 함수를 쓴다. 실패하면 아이에게 보여 줄 말을 돌려준다.
 export async function enterSeat(app, n) {
   const { store } = app;
-  const nickname = `${n}번`;
+  const nickname = seatName(n);
   try {
     await store.ensureRoom(ROOM);
     const { uid } = await store.joinClass(ROOM, nickname, n);
@@ -55,6 +55,9 @@ export function renderHome(app, params = {}) {
     } catch { toast('열지 못했어요. 다시 눌러 주세요.'); }
   }
 
+  // 0번: 아이들에게 쓰는 법을 보여 줄 학생 화면(새 탭)
+  const demoSeatButton = () => h('a', { class: 'btn', href: seatLink(DEMO_SEAT), target: '_blank', rel: 'noopener' }, '0번 시범 학생 화면 열기');
+
   function renderTeacherBody() {
     if (!demo && !store.isTeacher()) {
       fill(teacherBody, h('button', {
@@ -68,6 +71,7 @@ export function renderHome(app, params = {}) {
     }
     fill(teacherBody,
       h('button', { class: 'btn primary', type: 'button', onclick: openTeacher }, demo ? '선생님 화면 열기' : '관전판 열기'),
+      demoSeatButton(),
       demo ? null : h('button', { class: 'btn small ghost', type: 'button', onclick: async () => { await store.signOut(); renderTeacherBody(); } }, '로그아웃'));
   }
 

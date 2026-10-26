@@ -2535,7 +2535,10 @@
   "tags": [
    "무서",
    "겁나",
-   "무서운"
+   "무서운",
+   "무섭",
+   "무섭다",
+   "겁나다"
   ],
   "en": "scared",
   "past": null,
@@ -4634,5 +4637,329 @@
   "en": "rest",
   "past": "rested",
   "group": "하는 말"
+ },
+ {
+  "id": "w430",
+  "ko": "음식",
+  "tags": [
+   "음식",
+   "먹을 것",
+   "먹을거리",
+   "먹는 것",
+   "좋아하는 음식"
+  ],
+  "en": "food",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w431",
+  "ko": "간식",
+  "tags": [
+   "간식",
+   "군것질",
+   "주전부리"
+  ],
+  "en": "snack",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w432",
+  "ko": "음료수",
+  "tags": [
+   "음료수",
+   "음료",
+   "마실 것",
+   "마실거리"
+  ],
+  "en": "drink",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w433",
+  "ko": "디저트",
+  "tags": [
+   "디저트",
+   "후식"
+  ],
+  "en": "dessert",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w434",
+  "ko": "분식",
+  "tags": [
+   "분식",
+   "분식집 음식"
+  ],
+  "en": "Korean street food",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w435",
+  "ko": "반찬",
+  "tags": [
+   "반찬"
+  ],
+  "en": "side dish",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w436",
+  "ko": "채소",
+  "tags": [
+   "채소",
+   "야채"
+  ],
+  "en": "vegetables",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w437",
+  "ko": "고기",
+  "tags": [
+   "고기",
+   "소고기",
+   "돼지고기"
+  ],
+  "en": "meat",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w438",
+  "ko": "식사",
+  "tags": [
+   "식사",
+   "끼니"
+  ],
+  "en": "meal",
+  "past": null,
+  "group": "음식"
+ },
+ {
+  "id": "w439",
+  "ko": "동물",
+  "tags": [
+   "동물",
+   "동물들"
+  ],
+  "en": "animal",
+  "past": null,
+  "group": "동물"
+ },
+ {
+  "id": "w440",
+  "ko": "사람",
+  "tags": [
+   "사람",
+   "사람들"
+  ],
+  "en": "person",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w441",
+  "ko": "가수",
+  "tags": [
+   "가수"
+  ],
+  "en": "singer",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w442",
+  "ko": "연예인",
+  "tags": [
+   "연예인",
+   "스타"
+  ],
+  "en": "celebrity",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w443",
+  "ko": "유튜버",
+  "tags": [
+   "유튜버",
+   "크리에이터"
+  ],
+  "en": "YouTuber",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w444",
+  "ko": "직업",
+  "tags": [
+   "직업",
+   "일",
+   "장래희망 직업"
+  ],
+  "en": "job",
+  "past": null,
+  "group": "사람"
+ },
+ {
+  "id": "w445",
+  "ko": "운동",
+  "tags": [
+   "운동",
+   "스포츠",
+   "운동하기"
+  ],
+  "en": "sport",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w446",
+  "ko": "놀이",
+  "tags": [
+   "놀이",
+   "노는 것",
+   "놀이 활동"
+  ],
+  "en": "activity",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w447",
+  "ko": "노래(곡)",
+  "tags": [
+   "노래",
+   "곡",
+   "노래 한 곡",
+   "좋아하는 노래"
+  ],
+  "en": "song",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w448",
+  "ko": "캐릭터",
+  "tags": [
+   "캐릭터"
+  ],
+  "en": "character",
+  "past": null,
+  "group": "놀이·운동"
+ },
+ {
+  "id": "w449",
+  "ko": "과목",
+  "tags": [
+   "과목",
+   "공부 과목"
+  ],
+  "en": "subject",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w450",
+  "ko": "옷",
+  "tags": [
+   "옷",
+   "의류"
+  ],
+  "en": "clothes",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w451",
+  "ko": "돈",
+  "tags": [
+   "돈"
+  ],
+  "en": "money",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w452",
+  "ko": "용돈",
+  "tags": [
+   "용돈"
+  ],
+  "en": "pocket money",
+  "past": null,
+  "group": "학교·물건"
+ },
+ {
+  "id": "w453",
+  "ko": "장소",
+  "tags": [
+   "장소",
+   "곳"
+  ],
+  "en": "place",
+  "past": null,
+  "group": "장소"
+ },
+ {
+  "id": "w454",
+  "ko": "색깔",
+  "tags": [
+   "색깔",
+   "색",
+   "색상"
+  ],
+  "en": "color",
+  "past": null,
+  "group": "색깔"
+ },
+ {
+  "id": "w455",
+  "ko": "날씨",
+  "tags": [
+   "날씨"
+  ],
+  "en": "weather",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w456",
+  "ko": "계절",
+  "tags": [
+   "계절"
+  ],
+  "en": "season",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w457",
+  "ko": "시간",
+  "tags": [
+   "시간"
+  ],
+  "en": "time",
+  "past": null,
+  "group": "날씨·때"
+ },
+ {
+  "id": "w458",
+  "ko": "꿈",
+  "tags": [
+   "꿈",
+   "장래희망"
+  ],
+  "en": "dream",
+  "past": null,
+  "group": "마음"
  }
 ]

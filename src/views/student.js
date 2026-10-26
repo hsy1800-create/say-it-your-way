@@ -1,7 +1,7 @@
 import books from '../data/books.json';
 import { h, icon, toast, ago, fill } from '../lib/dom.js';
 import { speak } from '../lib/tts.js';
-import { search, WORD_GROUPS, wordsInGroup } from '../lib/search.js';
+import { search, norm, WORD_GROUPS, wordsInGroup } from '../lib/search.js';
 import { compressFile, openCamera, snapshot, startRecording } from '../lib/media.js';
 import { phraseCard, speakButtons, brandMark } from './parts.js';
 import { createBook } from './ebook.js';
@@ -69,11 +69,13 @@ export function renderStudent(app) {
     h('button', { class: 'btn small ghost', type: 'button', onclick: leave }, '나가기'));
   const noticeRow = h('div', { class: 'notice-row' });
   const bookSlot = h('div');
+  const followNote = h('p', { class: 'follow-note', hidden: true }, '선생님과 같이 보는 중이에요. 선생님이 장을 넘기면 내 책도 같이 넘어가요.');
+  let lastSpread = null;
   const pageTabs = h('div', { class: 'pagetabs', role: 'tablist', 'aria-label': '내 책 쪽 고르기' });
   const writeCol = h('div', { class: 'write' });
   const finder = h('aside', { class: 'card finder', 'aria-label': '낱말 찾기' });
   const work = h('div', { class: 'work' }, writeCol, finder);
-  root.append(header, noticeRow, bookSlot, pageTabs, work);
+  root.append(header, noticeRow, followNote, bookSlot, pageTabs, work);
 
   const bookData = () => books.find((b) => b.lesson === lesson) || books[0];
   const entryOf = (p) => myEntries[`${S.uid}_${lesson}_${p}`];
@@ -367,6 +369,8 @@ export function renderStudent(app) {
     const otherPhrases = phrases.filter((p) => !p.fromTeacher);
     const allWords = [...teacherWords, ...words];
     const found = allWords.length + otherPhrases.length > 0;
+    // "음식", "동물"처럼 묶음 이름으로 찾으면 그 묶음을 통째로 볼 수 있게 한다.
+    const groupHit = WORD_GROUPS.find((g) => g.split('·').some((part) => norm(part) === norm(q)));
     fill(results, 
       h('div', { class: 'row' },
         h('span', { class: 'sub-h' }, `‘${q}’`),
@@ -377,6 +381,8 @@ export function renderStudent(app) {
       found ? null : h('span', { class: 'sub-h' }, '더 짧은 말로 찾거나, 묶음에서 골라 봐요'),
       found ? null : h('div', { class: 'groups' }, WORD_GROUPS.map((g) => h('button', { class: 'btn small', type: 'button', onclick: () => { lastQuery = ''; browseGroup = g; renderResults(); } }, g))),
       allWords.length ? h('div', { class: 'word-list' }, allWords.map(wordCard)) : null,
+      groupHit ? h('button', { class: 'btn small', type: 'button', onclick: () => { lastQuery = ''; qInput.value = ''; browseGroup = groupHit; renderResults(); } },
+        `‘${groupHit}’ 낱말 모두 보기 (${wordsInGroup(groupHit).length}개)`) : null,
       otherPhrases.length ? h('span', { class: 'sub-h' }, '이런 표현도 있어요') : null,
       otherPhrases.length ? h('div', { class: 'phrase-list' }, otherPhrases.map((p) => phraseCard(p, { onUse: insertText, youglish: !!cls?.youglish }))) : null);
   }
@@ -517,10 +523,15 @@ export function renderStudent(app) {
       lesson = c.lesson;
       page = 1;
       tab = 'page';
+      lastSpread = null;
       renderAll();
     } else if (prevYg !== c.youglish) {
       renderResults();
     }
+    // 같이 보기: 선생님이 넘긴 장으로 내 화면의 선생님 책을 맞춘다.
+    followNote.hidden = !c.follow;
+    if (!c.follow) lastSpread = null;
+    else if (c.spread !== lastSpread) { lastSpread = c.spread; book?.setSpread(c.spread); }
   }));
   unsubs.push(store.watchMyEntries(S.code, S.uid, (list) => {
     myEntries = Object.fromEntries(list.map((e) => [`${e.uid}_${e.lesson}_${e.page}`, e]));

@@ -22,7 +22,9 @@ function scoreKo(q, item) {
     const nt = norm(t);
     if (!nt) continue;
     if (q === nt) s += nt.length * 3;
-    else if (q.includes(nt)) s += nt.length * 2;
+    // "고양이를"처럼 뒤에 붙은 말은 떼고 찾는다. 한 글자 낱말(물, 소, 강)은 "물을"처럼 바로 뒤에 한 글자가 붙을 때만 찾는다.
+    // 그래야 "동물"에서 물(water), "채소"에서 소(cow)가 나오지 않는다.
+    else if (q.includes(nt) && (nt.length >= 2 || (q.length === 2 && q.startsWith(nt)))) s += nt.length * 2;
     else if (q.length >= 2 && nt.includes(q)) s += q.length;
   }
   const nk = norm(item.ko);

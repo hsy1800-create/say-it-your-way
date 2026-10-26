@@ -46,7 +46,7 @@ export function renderTeacher(app) {
   const nameEl = h('h1');
   const lessonSel = h('select', { id: 'lesson-select', 'aria-label': '오늘의 차시', style: { width: 'auto' } },
     books.map((b) => h('option', { value: b.lesson }, `${b.lesson}차시 · ${b.title}`)));
-  lessonSel.addEventListener('change', () => store.updateClass(code, { lesson: +lessonSel.value }));
+  lessonSel.addEventListener('change', () => store.updateClass(code, { lesson: +lessonSel.value, ...(cls?.follow ? { spread: 0 } : {}) }));
   const head = h('div', { class: 'teacher-head' },
     brandMark(30, false),
     h('div', { class: 'stack', style: { gap: '0', minWidth: '0' } }, h('span', { class: 'muted small' }, 'Say It Your Way · 선생님'), nameEl),
@@ -341,6 +341,20 @@ export function renderTeacher(app) {
         : h('div', { class: 'card empty-state' }, h('h3', null, '아직 올라온 사진이 없어요'), h('p', null, '아이들이 학생 화면의 ‘사진’ 칸에서 책을 펼쳐 찍어 올리면 여기에 모여요.')));
   }
 
+  // ---------- 모델 책: 아이들 책도 같이 넘기기 ----------
+  function followBar() {
+    const on = !!cls?.follow;
+    return h('div', { class: 'card follow-bar' + (on ? ' on' : '') },
+      h('button', {
+        class: on ? 'btn' : 'btn primary', type: 'button', 'aria-pressed': String(on),
+        onclick: () => store.updateClass(code, on ? { follow: false } : { follow: true, spread: ebook?.spread() ?? 0 })
+          .catch(() => toast('바꾸지 못했어요. 다시 눌러 주세요.')),
+      }, on ? '같이 넘기는 중 · 끄기' : '아이들 책도 같이 넘기기'),
+      h('span', { class: 'small muted' }, on
+        ? '선생님이 장을 넘기면 아이들 화면의 선생님 책도 같은 장으로 넘어가요. 아이들도 혼자 넘겨 볼 수 있고, 선생님이 다음 장을 넘기면 다시 맞춰져요.'
+        : '켜면 선생님이 넘기는 대로 아이들 화면의 선생님 책도 같이 넘어가요. 책 읽어 주기를 할 때 켜고, 쓰기 시간에는 꺼 주세요.'));
+  }
+
   // ---------- 오늘의 덩어리 ----------
   function chunksView() {
     const list = book().chunks;
@@ -402,9 +416,13 @@ export function renderTeacher(app) {
     else if (tab === 'wall') fill(content, wallView());
     else if (tab === 'photos') fill(content, photosView());
     else if (tab === 'ebook') {
-      if (!ebook) ebook = createBook({ lesson: lesson(), mode: 'browse' });
-      else ebook.setLesson(lesson());
-      fill(content, ebook.el);
+      if (!ebook) {
+        ebook = createBook({
+          lesson: lesson(), mode: 'browse', pickLesson: false,
+          onSpread: (n) => { if (cls?.follow) store.updateClass(code, { spread: n }).catch(() => {}); },
+        });
+      } else ebook.setLesson(lesson());
+      fill(content, h('div', { class: 'stack' }, followBar(), ebook.el));
     } else if (tab === 'chunks') fill(content, chunksView());
     else fill(content, settingsView());
   }

@@ -25,7 +25,7 @@ function flowerArt() {
 }
 
 // mode: 'browse'(차시를 넘겨 보는 전자책) | 'student'(학생이 지금 쓰는 쪽을 함께 보여 줌)
-export function createBook({ lesson = 2, mode = 'browse', page = 1, onPickPage, pickLesson = mode === 'browse', onLesson } = {}) {
+export function createBook({ lesson = 2, mode = 'browse', page = 1, onPickPage, pickLesson = mode === 'browse', onLesson, onSpread } = {}) {
   let L = lesson;
   let s = mode === 'student' ? spreadOfPage(page) : 0;
   let active = page;
@@ -120,9 +120,12 @@ export function createBook({ lesson = 2, mode = 'browse', page = 1, onPickPage, 
   }
 
   function go(d) {
-    s = Math.max(0, Math.min(SPREADS.length - 1, s + d));
+    const next = Math.max(0, Math.min(SPREADS.length - 1, s + d));
+    if (next === s) return;
+    s = next;
     stop();
     render();
+    onSpread?.(s);
   }
 
   function toggleFull() {
@@ -147,6 +150,9 @@ export function createBook({ lesson = 2, mode = 'browse', page = 1, onPickPage, 
     el,
     setLesson(n) { if (n !== L) { L = n; s = mode === 'student' ? spreadOfPage(active) : 0; render(); } },
     setPage(n) { active = n; s = spreadOfPage(n); render(); },
+    // 선생님이 넘긴 장으로 맞춘다(같이 보기).
+    setSpread(n) { const t = Math.max(0, Math.min(SPREADS.length - 1, n | 0)); if (t !== s) { s = t; stop(); render(); } },
+    spread() { return s; },
     destroy() { document.removeEventListener('keydown', onKey); stop(); },
   };
 }

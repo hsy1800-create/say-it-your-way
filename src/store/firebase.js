@@ -63,7 +63,7 @@ export async function createFirebaseStore() {
       return onSnapshot(doc(db, 'classes', code), (s) => {
         if (!s.exists()) return cb(null);
         const d = s.data();
-        cb({ code, name: d.name, lesson: d.lesson, youglish: !!d.youglish, teacherUid: d.teacherUid });
+        cb({ code, name: d.name, lesson: d.lesson, youglish: !!d.youglish, teacherUid: d.teacherUid, follow: !!d.follow, spread: d.spread ?? 0 });
       }, () => cb(null));
     },
     async updateClass(code, patch) { await updateDoc(doc(db, 'classes', code), patch); },

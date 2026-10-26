@@ -396,3 +396,12 @@ table.board { border-collapse: separate; border-spacing: 0; width: 100%; min-wid
 .book-cover { width: fit-content; margin: 0 auto; }
 .book.student .book-cover { --pw: 41vh; }
 .frame-line .nb { white-space: nowrap; }
+
+/* 같이 보기(선생님이 넘기면 아이 책도 넘어감) */
+.follow-bar { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; padding: 12px 16px; }
+.follow-bar.on { border-color: var(--leaf); background: var(--leaf-soft); }
+.follow-bar .small { flex: 1; min-width: 220px; }
+.follow-note {
+  margin: 0 0 8px; padding: 8px 14px; border-radius: 999px; background: var(--leaf-soft); border: 1.5px solid var(--leaf);
+  font-family: var(--display); font-size: 1rem; width: fit-content; max-width: 100%;
+}

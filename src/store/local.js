@@ -81,7 +81,7 @@ export function createLocalStore() {
     watchClass(code, cb) {
       return sub(() => {
         const c = cls(code);
-        cb(c ? { code, name: c.name, lesson: c.lesson, youglish: !!c.youglish, teacherUid: c.teacherUid } : null);
+        cb(c ? { code, name: c.name, lesson: c.lesson, youglish: !!c.youglish, teacherUid: c.teacherUid, follow: !!c.follow, spread: c.spread ?? 0 } : null);
       });
     },
     async updateClass(code, patch) { refresh(); Object.assign(cls(code), patch); write(); },

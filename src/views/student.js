@@ -64,7 +64,7 @@ export function renderStudent(app) {
   const title = h('h1');
   const header = h('div', { class: 'topbar' },
     brandMark(30, false),
-    h('div', { class: 'who' }, h('span', { class: 'muted small' }, `${S.nickname} · 반 ${S.code}`), title),
+    h('div', { class: 'who' }, h('span', { class: 'muted small' }, S.nickname), title),
     h('span', { class: 'spacer' }),
     h('button', { class: 'btn small ghost', type: 'button', onclick: leave }, '나가기'));
   const noticeRow = h('div', { class: 'notice-row' });
@@ -501,13 +501,15 @@ export function renderStudent(app) {
 
   function leave() {
     flushSave();
+    // 링크(?n=7)로 들어왔으면 주소에서 번호를 지워, 처음 화면에서 다른 번호를 고를 수 있게 한다.
+    if (location.search) history.replaceState(null, '', location.pathname);
     app.setSession(null);
     app.go('home');
   }
 
   // ---------- 실시간 ----------
   unsubs.push(store.watchClass(S.code, (c) => {
-    if (!c) { fill(writeCol, h('p', { class: 'banner' }, '반이 닫혔어요. 선생님께 새 반 코드를 받아요.')); return; }
+    if (!c) { fill(writeCol, h('p', { class: 'banner' }, '반을 찾을 수 없어요. 선생님께 알려 주세요.')); return; }
     const prevYg = cls?.youglish;
     cls = c;
     if (c.lesson !== lesson) {

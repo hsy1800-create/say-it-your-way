@@ -40,34 +40,22 @@ export function createLocalStore() {
   };
   const sortBy = (arr, key) => [...arr].sort((a, b) => (b[key] || 0) - (a[key] || 0));
 
-  function makeCode() {
-    const abc = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-    let c;
-    do { c = Array.from({ length: 4 }, () => abc[Math.floor(Math.random() * abc.length)]).join(''); }
-    while (mem.classes[c]);
-    return c;
-  }
-
   return {
     mode: 'demo',
     async signInTeacher() { return { uid: TEACHER, name: '선생님' }; },
     async signOut() {},
     isTeacher() { return true; },
-    async myClasses() {
+    uid() { return tabUid(); },
+    // 체험 모드에는 반이 없으면 예시가 들어 있는 반을 하나 만든다.
+    async ensureRoom(code) {
       refresh();
-      return Object.values(mem.classes).filter((c) => c.teacherUid === TEACHER)
-        .map(({ code, name, lesson }) => ({ code, name, lesson }));
-    },
-    async createClass(name, { withExamples = false } = {}) {
-      refresh();
-      const code = makeCode();
+      if (cls(code)) return;
       mem.classes[code] = {
-        code, name: name || '우리 반', lesson: 2, youglish: false, teacherUid: TEACHER, createdAt: Date.now(),
+        code, name: '우리 반', lesson: 2, youglish: false, teacherUid: TEACHER, createdAt: Date.now(),
         students: {}, entries: {}, searches: [], notices: [], tips: [], photos: {},
       };
-      if (withExamples) seedExamples(mem.classes[code]);
+      seedExamples(mem.classes[code]);
       write();
-      return code;
     },
     async addExamples(code) { refresh(); const c = cls(code); if (c) { seedExamples(c); write(); } },
     async removeExamples(code) {
@@ -81,19 +69,19 @@ export function createLocalStore() {
       c.tips = c.tips.filter((t) => !isEx(t.uid));
       write();
     },
-    async joinClass(code, nickname) {
+    async joinClass(code, nickname, seat) {
       refresh();
       const c = cls(code);
       if (!c) throw new Error('no-class');
       const u = tabUid();
-      c.students[u] = { uid: u, nickname, joinedAt: Date.now() };
+      c.students[u] = { uid: u, nickname, seat, joinedAt: Date.now() };
       write();
       return { uid: u };
     },
     watchClass(code, cb) {
       return sub(() => {
         const c = cls(code);
-        cb(c ? { code, name: c.name, lesson: c.lesson, youglish: !!c.youglish } : null);
+        cb(c ? { code, name: c.name, lesson: c.lesson, youglish: !!c.youglish, teacherUid: c.teacherUid } : null);
       });
     },
     async updateClass(code, patch) { refresh(); Object.assign(cls(code), patch); write(); },
@@ -141,15 +129,21 @@ export function createLocalStore() {
     watchPhotos(code, cb) { return sub(() => cb(sortBy(Object.values(cls(code)?.photos || {}), 'at'))); },
     watchMyPhotos(code, u, cb) { return sub(() => cb(Object.values(cls(code)?.photos || {}).filter((p) => p.uid === u))); },
 
-    async clearClass(code) { refresh(); delete mem.classes[code]; write(); },
+    async clearClass(code) {
+      refresh();
+      const c = cls(code);
+      if (!c) return;
+      Object.assign(c, { students: {}, entries: {}, searches: [], notices: [], tips: [], photos: {} });
+      write();
+    },
   };
 }
 
 // 체험용 예시. 이름에 "(예시)"를 붙여 진짜 학생과 헷갈리지 않게 한다.
 function seedExamples(c) {
   const now = Date.now();
-  const kids = [['example-1', '1번 (예시)'], ['example-2', '2번 (예시)'], ['example-3', '3번 (예시)']];
-  for (const [u, n] of kids) c.students[u] = { uid: u, nickname: n, joinedAt: now - 600000 };
+  const kids = [['example-1', '1번 (예시)', 1], ['example-2', '2번 (예시)', 2], ['example-3', '3번 (예시)', 3]];
+  for (const [u, n, seat] of kids) c.students[u] = { uid: u, nickname: n, seat, joinedAt: now - 600000 };
   const put = (u, n, page, en, blanks, gender, minsAgo, shared = false) => {
     const id = `${u}_2_${page}`;
     const filled = blanks.filter((b) => b && b.trim()).length;

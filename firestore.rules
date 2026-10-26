@@ -15,17 +15,16 @@ service cloud.firestore {
     function myId(id) { return signedIn() && id.matches(request.auth.uid + '_.*'); }
 
     match /classes/{code} {
-      // 반 코드를 아는 사람만 그 반을 연다. 반 목록은 만든 선생님만 본다.
+      // 반은 하나뿐이고 Firebase 콘솔에서만 만든다. 앱에서는 새로 만들거나 지우거나 주인을 바꿀 수 없다.
       allow get: if signedIn();
-      allow list: if isTeacherAccount() && resource.data.teacherUid == request.auth.uid;
-      allow create: if isTeacherAccount() && request.resource.data.teacherUid == request.auth.uid;
       allow update: if isTeacher(code) && request.resource.data.teacherUid == resource.data.teacherUid;
-      allow delete: if isTeacher(code);
+      allow create, delete: if false;
 
       match /students/{sid} {
         allow read: if sid == request.auth.uid || isTeacher(code);
         allow create, update: if signedIn() && sid == request.auth.uid
-          && request.resource.data.nickname is string && request.resource.data.nickname.size() <= 20;
+          && request.resource.data.nickname is string && request.resource.data.nickname.size() <= 20
+          && request.resource.data.get('seat', 1) is int;
         allow delete: if isTeacher(code);
       }
 

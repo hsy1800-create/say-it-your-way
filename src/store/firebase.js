@@ -3,7 +3,7 @@ import {
   getAuth, onAuthStateChanged, signInAnonymously, GoogleAuthProvider, signInWithPopup, signOut,
 } from 'firebase/auth';
 import {
-  getFirestore, doc, getDoc, setDoc, updateDoc, addDoc, deleteDoc, collection, query, where,
+  getFirestore, doc, getDoc, setDoc, updateDoc, addDoc, collection, query, where,
   onSnapshot, getDocs, writeBatch, serverTimestamp,
 } from 'firebase/firestore';
 import { firebaseConfig } from '../config.js';
@@ -38,10 +38,6 @@ export async function createFirebaseStore() {
     if (!u || u.isAnonymous) throw new Error('not-teacher');
     return u;
   }
-  function makeCode() {
-    const abc = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-    return Array.from({ length: 4 }, () => abc[Math.floor(Math.random() * abc.length)]).join('');
-  }
 
   return {
     mode: 'firebase',
@@ -52,36 +48,22 @@ export async function createFirebaseStore() {
     },
     async signOut() { await signOut(auth); },
     isTeacher() { const u = auth.currentUser; return !!u && !u.isAnonymous; },
-    async myClasses() {
-      const u = auth.currentUser;
-      if (!u || u.isAnonymous) return [];
-      const snap = await getDocs(query(collection(db, 'classes'), where('teacherUid', '==', u.uid)));
-      return snap.docs.map((d) => ({ code: d.id, name: d.data().name, lesson: d.data().lesson }));
-    },
-    async createClass(name) {
-      const u = teacher();
-      for (let i = 0; i < 8; i++) {
-        const code = makeCode();
-        const ref = doc(db, 'classes', code);
-        const found = await getDoc(ref);
-        if (found.exists()) continue;
-        await setDoc(ref, { name: name || '우리 반', lesson: 2, youglish: false, teacherUid: u.uid, createdAt: serverTimestamp() });
-        return code;
-      }
-      throw new Error('code-fail');
-    },
-    async joinClass(code, nickname) {
+    uid() { return auth.currentUser?.uid || null; },
+    // 반은 콘솔에서 한 번 만들어 두고 앱에서는 만들지 않는다.
+    async ensureRoom() {},
+    async joinClass(code, nickname, seat) {
+      if (auth.currentUser && !auth.currentUser.isAnonymous) throw new Error('teacher-account');
       const u = await ensureStudent();
       const c = await getDoc(doc(db, 'classes', code));
       if (!c.exists()) throw new Error('no-class');
-      await setDoc(D(code, 'students', u.uid), { uid: u.uid, nickname, joinedAt: serverTimestamp() });
+      await setDoc(D(code, 'students', u.uid), { uid: u.uid, nickname, seat, joinedAt: serverTimestamp() });
       return { uid: u.uid };
     },
     watchClass(code, cb) {
       return onSnapshot(doc(db, 'classes', code), (s) => {
         if (!s.exists()) return cb(null);
         const d = s.data();
-        cb({ code, name: d.name, lesson: d.lesson, youglish: !!d.youglish });
+        cb({ code, name: d.name, lesson: d.lesson, youglish: !!d.youglish, teacherUid: d.teacherUid });
       }, () => cb(null));
     },
     async updateClass(code, patch) { await updateDoc(doc(db, 'classes', code), patch); },
@@ -109,7 +91,7 @@ export async function createFirebaseStore() {
     watchPhotos(code, cb) { return watch(C(code, 'photos'), cb); },
     watchMyPhotos(code, uid, cb) { return watch(query(C(code, 'photos'), where('uid', '==', uid)), cb); },
 
-    // 학기 끝: 반의 모든 기록을 지운다.
+    // 학기 끝: 반의 모든 기록을 지운다. 반(번호 칸과 링크)은 그대로 둔다.
     async clearClass(code) {
       for (const name of ['entries', 'students', 'searches', 'notices', 'tips', 'photos']) {
         const snap = await getDocs(C(code, name));
@@ -121,7 +103,6 @@ export async function createFirebaseStore() {
         }
         await batch.commit();
       }
-      await deleteDoc(doc(db, 'classes', code));
     },
   };
 }

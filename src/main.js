@@ -1,7 +1,8 @@
 import './styles.css';
 import { getStore } from './store/index.js';
 import { h, ss, fill } from './lib/dom.js';
-import { renderHome } from './views/home.js';
+import { renderHome, enterSeat } from './views/home.js';
+import { seatFromUrl } from './config.js';
 import { renderStudent } from './views/student.js';
 import { renderTeacher } from './views/teacher.js';
 import { renderEbookPage } from './views/ebook.js';
@@ -32,6 +33,14 @@ const app = {
   } catch (e) {
     console.error(e);
     fill(root, h('div', { class: 'banner' }, 'Firebase에 연결하지 못했어요. src/firebase-config.js의 값을 확인해 주세요.'));
+    return;
+  }
+  // 아이 링크(?n=7)로 왔으면 바로 그 번호로 들어간다.
+  const seat = seatFromUrl();
+  if (seat) {
+    if (app.session?.role === 'student' && app.session.seat === seat) { app.go('student'); return; }
+    const err = await enterSeat(app, seat);
+    if (err) app.go('home', { msg: err });
     return;
   }
   const last = ss('siyw-view');

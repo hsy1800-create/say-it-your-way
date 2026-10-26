@@ -156,8 +156,16 @@ label.field { display: flex; flex-direction: column; gap: 4px; font-size: 0.95re
 .home-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px; }
 .home-grid .card { display: flex; flex-direction: column; gap: 12px; }
 .home-grid .card h2 { font-size: 1.55rem; }
-.class-list { display: flex; flex-direction: column; gap: 8px; }
-.class-item { display: flex; align-items: center; gap: 10px; justify-content: space-between; }
+/* 학생: 내 번호 누르기 */
+.seat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 12px 0 6px; }
+.seat-btn {
+  min-height: 60px; border-radius: 18px; border: 1.5px solid var(--line); background: var(--soft); color: var(--ink);
+  font-family: var(--brand); font-size: 1.7rem; font-weight: 600; cursor: pointer;
+  transition: transform 0.08s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.seat-btn:hover { background: var(--pink); border-color: var(--pink-deep); }
+.seat-btn:active { transform: translateY(1px); }
+.seat-btn:focus-visible { outline: 3px solid var(--heart); outline-offset: 2px; }
 .code { font-family: var(--en); font-weight: 700; letter-spacing: 0.12em; font-size: 1.1rem; }
 
 /* ===== 펼친 책 ===== */
@@ -319,8 +327,13 @@ video.photo-preview { aspect-ratio: 4 / 3; object-fit: cover; }
 
 /* ===== 선생님 화면 ===== */
 .teacher-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
-.teacher-head .codebox { display: flex; align-items: center; gap: 8px; padding: 6px 8px 6px 16px; border-radius: 999px; background: var(--card); border: 1.5px solid var(--line); }
-.teacher-head .codebox .code { font-size: 1.5rem; color: var(--heart); }
+/* 선생님: 학생 링크 */
+.links { display: flex; flex-direction: column; gap: 0; padding: 6px 18px; }
+.link-row { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.link-row:last-child { border-bottom: 0; }
+.link-row .seat-no { font-family: var(--display); font-weight: 400; font-size: 1.1rem; min-width: 3em; }
+.link-row .url { flex: 1; min-width: 0; font-family: var(--en); font-size: 0.92rem; color: var(--ink); overflow-wrap: anywhere; }
+.board tr.away td.name { color: var(--muted); }
 .summary { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
 .board-layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 16px; align-items: start; }
 .board-wrap { overflow-x: auto; border-radius: var(--r); border: 1.5px solid var(--line); background: var(--card); box-shadow: var(--shadow); }

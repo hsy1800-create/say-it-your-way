@@ -4,9 +4,11 @@ import { speak, speakAll, stop } from '../lib/tts.js';
 import { norm } from '../lib/search.js';
 import { createBook } from './ebook.js';
 import { speakButtons, brandMark } from './parts.js';
+import { SEATS, seatLink } from '../config.js';
 
 const TABS = [
   ['board', '관전판'],
+  ['links', '학생 링크'],
   ['wall', '문장 벽'],
   ['photos', '사진'],
   ['ebook', '모델 책'],
@@ -31,7 +33,7 @@ export function renderTeacher(app) {
   let notices = [];
   let photos = [];
   let tab = 'board';
-  let sel = null; // { uid, page }
+  let sel = null; // { seat, page }
   let ebook = null;
   let stopWall = null;
   let chunkIndex = 0;
@@ -45,17 +47,9 @@ export function renderTeacher(app) {
   const lessonSel = h('select', { id: 'lesson-select', 'aria-label': '오늘의 차시', style: { width: 'auto' } },
     books.map((b) => h('option', { value: b.lesson }, `${b.lesson}차시 · ${b.title}`)));
   lessonSel.addEventListener('change', () => store.updateClass(code, { lesson: +lessonSel.value }));
-  const copyBtn = h('button', {
-    class: 'btn small', type: 'button',
-    onclick: async () => {
-      try { await navigator.clipboard.writeText(code); toast('반 코드를 복사했어요.'); }
-      catch { toast(`반 코드: ${code}`); }
-    },
-  }, '복사');
   const head = h('div', { class: 'teacher-head' },
     brandMark(30, false),
     h('div', { class: 'stack', style: { gap: '0', minWidth: '0' } }, h('span', { class: 'muted small' }, 'Say It Your Way · 선생님'), nameEl),
-    h('div', { class: 'codebox' }, h('span', { class: 'muted small' }, '반 코드'), h('span', { class: 'code' }, code), copyBtn),
     h('label', { class: 'row', for: 'lesson-select' }, h('span', { class: 'muted small' }, '오늘의 책'), lessonSel),
     h('span', { class: 'spacer' }),
     h('button', { class: 'btn small ghost', type: 'button', onclick: () => { app.setSession(null); app.go('home'); } }, '나가기'));
@@ -73,10 +67,21 @@ export function renderTeacher(app) {
 
   const lesson = () => cls?.lesson || 2;
   const book = () => books.find((b) => b.lesson === lesson()) || books[0];
-  const studentList = () => {
-    const map = new Map(students.map((s) => [s.uid, s.nickname]));
-    for (const e of entries) if (!map.has(e.uid)) map.set(e.uid, e.nickname);
-    return [...map.entries()].map(([uid, nickname]) => ({ uid, nickname })).sort((a, b) => byName(a.nickname, b.nickname));
+  // 번호 칸: 아이(uid)마다 번호가 있다. 한 번호로 두 곳에서 들어오면 같은 줄에 모아 가장 최근 것을 보여 준다.
+  const SEAT_LIST = Array.from({ length: SEATS }, (_, i) => i + 1);
+  const seatNum = (x) => x?.seat || parseInt(x?.nickname, 10) || null;
+  const seatByUid = () => {
+    const m = new Map();
+    for (const s of students) if (seatNum(s)) m.set(s.uid, seatNum(s));
+    for (const e of entries) if (!m.has(e.uid) && seatNum(e)) m.set(e.uid, seatNum(e));
+    return m;
+  };
+  const uidsOf = (seat) => [...seatByUid()].filter(([, n]) => n === seat).map(([u]) => u);
+  const joinedSeats = () => new Set(seatByUid().values());
+  const latestUid = (seat) => {
+    const uids = uidsOf(seat);
+    const joined = students.filter((s) => uids.includes(s.uid)).sort((a, b) => (b.joinedAt || 0) - (a.joinedAt || 0));
+    return joined[0]?.uid || uids[0] || null;
   };
   const stateOf = (e) => {
     if (!e?.en) return 'empty';
@@ -84,7 +89,11 @@ export function renderTeacher(app) {
     return 'done';
   };
   const withGaps = (text) => String(text).split(/(___)/).map((p) => (p === '___' ? h('span', { class: 'gap', 'aria-label': '빈칸' }) : p));
-  const entryAt = (uid, page) => entries.find((e) => e.uid === uid && e.lesson === lesson() && e.page === page);
+  const entryAt = (seat, page) => {
+    const uids = uidsOf(seat);
+    return entries.filter((e) => uids.includes(e.uid) && e.lesson === lesson() && e.page === page)
+      .sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0))[0];
+  };
 
   function missGroups() {
     const answered = new Set(notices.map((n) => norm(n.q)));
@@ -112,9 +121,10 @@ export function renderTeacher(app) {
     onsubmit: async (e) => {
       e.preventDefault();
       const text = tipIn.value.trim();
-      if (!sel || !text) return;
+      const to = sel && (entryAt(sel.seat, sel.page)?.uid || latestUid(sel.seat));
+      if (!to || !text) return;
       try {
-        await store.sendTip(code, { uid: sel.uid, lesson: lesson(), page: sel.page, text });
+        await store.sendTip(code, { uid: to, lesson: lesson(), page: sel.page, text });
         tipIn.value = '';
         toast('카드를 보냈어요.');
       } catch { toast('보내지 못했어요. 다시 눌러 주세요.'); }
@@ -132,39 +142,36 @@ export function renderTeacher(app) {
   let missSig = '';
 
   function renderSummary() {
-    const list = studentList();
-    const done = entries.filter((e) => e.lesson === lesson() && stateOf(e) === 'done').length;
+    const joined = joinedSeats().size;
+    let done = 0;
+    for (const n of SEAT_LIST) for (let p = 1; p <= 6; p++) if (stateOf(entryAt(n, p)) === 'done') done++;
     const misses = missGroups().length;
     fill(summary, 
-      h('span', { class: 'chip' }, `들어온 학생 ${list.length}명`),
-      h('span', { class: 'chip good' }, `다 쓴 쪽 ${done} / ${list.length * 6}`),
+      h('span', { class: 'chip' }, `들어온 학생 ${joined} / ${SEATS}명`),
+      h('span', { class: 'chip good' }, `다 쓴 쪽 ${done} / ${SEATS * 6}`),
       h('span', { class: misses ? 'chip warn' : 'chip' }, `못 찾은 말 ${misses}개`),
       demo ? h('span', { class: 'chip' }, '체험 모드') : null);
   }
 
   function renderBoard() {
-    const list = studentList();
-    if (!list.length) {
-      fill(boardWrap, h('div', { class: 'empty-state' },
-        h('h3', null, '아직 들어온 학생이 없어요'),
-        h('p', null, `아이들에게 반 코드 ${code}를 알려 주세요. 들어오는 대로 여기에 한 줄씩 생겨요.`)));
-      return;
-    }
     const now = Date.now();
+    const joined = joinedSeats();
     fill(boardWrap, h('table', { class: 'board' },
       h('thead', null, h('tr', null, h('th', { scope: 'col' }, '학생'), [1, 2, 3, 4, 5, 6].map((p) => h('th', { scope: 'col' }, `${p}쪽`)))),
-      h('tbody', null, list.map((s) => h('tr', null,
-        h('td', { class: 'name' }, s.nickname),
+      h('tbody', null, SEAT_LIST.map((n) => h('tr', { class: joined.has(n) ? '' : 'away' },
+        h('td', { class: 'name' }, `${n}번`,
+          joined.has(n) ? null : h('div', { class: 'small muted' }, '아직'),
+          uidsOf(n).length > 1 ? h('div', null, h('span', { class: 'chip', title: '같은 번호로 두 곳 이상에서 들어왔어요' }, '두 곳')) : null),
         [1, 2, 3, 4, 5, 6].map((p) => {
-          const e = entryAt(s.uid, p);
+          const e = entryAt(n, p);
           const state = stateOf(e);
           const stuck = state === 'part' && now - (e.updatedAt || now) > STUCK_MS;
-          const isSel = sel && sel.uid === s.uid && sel.page === p;
+          const isSel = sel && sel.seat === n && sel.page === p;
           return h('td', {
             class: `cell state-${state}${isSel ? ' sel' : ''}`, tabindex: '0',
-            'aria-label': `${s.nickname} ${p}쪽`,
-            onclick: () => select(s.uid, p),
-            onkeydown: (ev) => { if (ev.key === 'Enter') select(s.uid, p); },
+            'aria-label': `${n}번 ${p}쪽`,
+            onclick: () => select(n, p),
+            onkeydown: (ev) => { if (ev.key === 'Enter') select(n, p); },
           },
           state === 'empty' ? h('span', { class: 'empty' }, '·') : null,
           state !== 'empty' ? h('div', { class: 'en' }, withGaps(e.en)) : null,
@@ -174,8 +181,8 @@ export function renderTeacher(app) {
         }))))));
   }
 
-  function select(uid, page) {
-    sel = { uid, page };
+  function select(seat, page) {
+    sel = { seat, page };
     renderBoard();
     renderDetail();
     if (window.matchMedia('(max-width: 1000px)').matches) detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -187,17 +194,17 @@ export function renderTeacher(app) {
       detailForm.hidden = true;
       return;
     }
-    detailForm.hidden = false;
-    const s = studentList().find((x) => x.uid === sel.uid);
-    const e = entryAt(sel.uid, sel.page);
+    const uids = uidsOf(sel.seat);
+    detailForm.hidden = !uids.length;
+    const e = entryAt(sel.seat, sel.page);
     const q = book().pages[sel.page - 1].q;
     fill(detailInfo, 
-      h('div', { class: 'row' }, h('h3', null, `${s?.nickname || ''} · ${sel.page}쪽`), h('span', { class: 'spacer' }), e?.updatedAt ? h('span', { class: 'small muted' }, ago(e.updatedAt)) : null),
+      h('div', { class: 'row' }, h('h3', null, `${sel.seat}번 · ${sel.page}쪽`), h('span', { class: 'spacer' }), e?.updatedAt ? h('span', { class: 'small muted' }, ago(e.updatedAt)) : null),
       h('p', { class: 'small muted' }, `생각 질문: ${q}`),
       h('div', null, h('div', { class: 'small muted' }, e?.free != null ? '문장 · 직접 고쳐 씀' : `문장 · ${({ 1: '★ 쉽게', 2: '★★ 선생님 책처럼', 3: '★★★ 도전' })[e?.level || '2']}`),
-        stateOf(e) !== 'empty' ? h('div', { class: 'row' }, h('p', { class: 'en', style: { flex: '1', minWidth: '0' } }, withGaps(e.en)), speakButtons(e.en.replace(/___/g, ''))) : h('p', null, '아직 없어요')),
+        stateOf(e) !== 'empty' ? h('div', { class: 'row' }, h('p', { class: 'en', style: { flex: '1', minWidth: '0' } }, withGaps(e.en)), speakButtons(e.en.replace(/___/g, ''))) : h('p', null, uids.length ? '아직 없어요' : '아직 이 번호로 들어온 아이가 없어요')),
       (() => {
-        const mine = searches.filter((x) => x.uid === sel.uid && x.lesson === lesson()).slice(0, 8);
+        const mine = searches.filter((x) => uids.includes(x.uid) && x.lesson === lesson()).slice(0, 8);
         return h('div', null, h('div', { class: 'small muted' }, '이 아이가 찾은 말'),
           mine.length ? h('div', { class: 'row' }, mine.map((x) => h('span', { class: x.found ? 'chip good' : 'chip warn' }, x.q))) : h('p', { class: 'small muted' }, '아직 없어요'));
       })(),
@@ -266,10 +273,31 @@ export function renderTeacher(app) {
         h('div', { class: 'side' }, missCard, feedCard)));
   }
 
+  // ---------- 학생 링크 ----------
+  async function copyText(text, done) {
+    try { await navigator.clipboard.writeText(text); toast(done); }
+    catch { toast('복사하지 못했어요. 링크를 길게 눌러 복사해 주세요.'); }
+  }
+  function linksView() {
+    const joined = joinedSeats();
+    const all = SEAT_LIST.map((n) => `${n}번: ${seatLink(n)}`).join('\n');
+    return h('div', { class: 'stack' },
+      h('div', { class: 'row' },
+        h('h2', null, '학생 링크'),
+        h('span', { class: 'spacer' }),
+        h('button', { class: 'btn primary', type: 'button', onclick: () => copyText(all, `${SEATS}개를 모두 복사했어요.`) }, `${SEATS}개 모두 복사`)),
+      h('p', { class: 'muted small' }, '아이마다 자기 번호 링크를 보내 주세요. 누르면 로그인 없이 바로 그 번호 화면이 열려요. 링크를 아는 사람은 누구나 들어올 수 있으니 우리 반 아이들에게만 보내요.'),
+      h('div', { class: 'card links' }, SEAT_LIST.map((n) => h('div', { class: 'link-row' },
+        h('b', { class: 'seat-no' }, `${n}번`),
+        h('a', { class: 'url', href: seatLink(n), target: '_blank', rel: 'noopener' }, seatLink(n)),
+        joined.has(n) ? h('span', { class: 'chip good' }, '들어옴') : null,
+        h('button', { class: 'btn small', type: 'button', onclick: () => copyText(seatLink(n), `${n}번 링크를 복사했어요.`) }, '복사')))));
+  }
+
   // ---------- 문장 벽 ----------
   function wallView() {
     const list = entries.filter((e) => e.shared && e.lesson === lesson())
-      .sort((a, b) => byName(a.nickname, b.nickname) || a.page - b.page);
+      .sort((a, b) => (seatNum(a) || 99) - (seatNum(b) || 99) || byName(a.nickname, b.nickname) || a.page - b.page);
     const cards = list.map((e) => h('div', { class: 'card wall-card' },
       h('div', { class: 'row small muted' }, h('span', null, `${e.nickname} · ${e.page}쪽`)),
       h('p', { class: 'en' }, e.en),
@@ -344,7 +372,7 @@ export function renderTeacher(app) {
         h('h3', null, '학생 화면 열어 보기'),
         h('p', { class: 'small muted' }, demo
           ? '이 주소를 새 탭에서 한 번 더 열고 학생으로 들어가 보세요. 체험 모드는 같은 컴퓨터의 탭끼리 실시간으로 이어져요.'
-          : `아이들은 같은 주소로 들어와서 반 코드 ${code}와 번호를 넣어요.`)),
+          : '아이들은 ‘학생 링크’ 탭의 자기 번호 링크를 눌러 들어와요. 앱 주소로 들어오면 번호를 눌러 들어와요.')),
       demo ? h('div', { class: 'card stack' },
         h('h3', null, '예시 데이터'),
         h('p', { class: 'small muted' }, '“(예시)”가 붙은 학생과 문장은 체험용이에요.'),
@@ -356,12 +384,12 @@ export function renderTeacher(app) {
         onsubmit: async (e) => {
           e.preventDefault();
           if (confirmIn.value.trim() !== '지우기') { toast('확인 칸에 ‘지우기’라고 써 주세요.'); return; }
-          try { await store.clearClass(code); app.setSession(null); app.go('home'); toast('반의 기록을 모두 지웠어요.'); }
+          try { await store.clearClass(code); sel = null; confirmIn.value = ''; toast('반의 기록을 모두 지웠어요.'); }
           catch { toast('지우지 못했어요. 다시 해 주세요.'); }
         },
       },
       h('h3', null, '학기 끝: 반 기록 모두 지우기'),
-      h('p', { class: 'small muted' }, '아이들의 우리말, 검색, 문장, 카드, 사진이 모두 지워지고 반 코드도 없어져요. 되돌릴 수 없어요.'),
+      h('p', { class: 'small muted' }, `아이들의 문장, 검색, 카드, 사진, 들어온 기록이 모두 지워져요. 1~${SEATS}번 칸과 학생 링크는 그대로예요. 되돌릴 수 없어요.`),
       h('label', { class: 'field', for: 'confirm-clear' }, '확인하려면 ‘지우기’라고 써요', confirmIn),
       h('button', { class: 'btn', type: 'submit' }, '반 기록 모두 지우기')));
   }
@@ -370,6 +398,7 @@ export function renderTeacher(app) {
     if (tab !== 'ebook' && ebook) { ebook.destroy(); ebook = null; }
     if (tab !== 'wall') { stopWall?.(); stopWall = null; }
     if (tab === 'board') fill(content, boardView());
+    else if (tab === 'links') fill(content, linksView());
     else if (tab === 'wall') fill(content, wallView());
     else if (tab === 'photos') fill(content, photosView());
     else if (tab === 'ebook') {
@@ -386,6 +415,8 @@ export function renderTeacher(app) {
     if (tab === 'board') {
       if (kind === 'entries' || kind === 'students' || kind === 'class') { renderSummary(); renderBoard(); renderDetail(); }
       if (kind === 'searches' || kind === 'notices') { renderSummary(); renderFeed(); renderMisses(); if (sel) renderDetail(); }
+    } else if (tab === 'links' && (kind === 'students' || kind === 'entries')) {
+      fill(content, linksView());
     } else if (tab === 'wall' && (kind === 'entries' || kind === 'class')) {
       if (!stopWall) fill(content, wallView());
     } else if (tab === 'photos' && (kind === 'photos' || kind === 'class')) {
@@ -396,7 +427,14 @@ export function renderTeacher(app) {
   }
 
   unsubs.push(store.watchClass(code, (c) => {
-    if (!c) { fill(content, h('div', { class: 'banner' }, '이 반을 찾을 수 없어요. 처음 화면에서 반을 다시 골라 주세요.')); return; }
+    if (!c) { fill(content, h('div', { class: 'banner' }, '반을 찾을 수 없어요. Firebase 콘솔에서 반 문서가 있는지 확인해 주세요.')); return; }
+    if (!demo && c.teacherUid && c.teacherUid !== store.uid()) {
+      fill(content, h('div', { class: 'card stack' },
+        h('h3', null, '이 반의 선생님 계정이 아니에요'),
+        h('p', null, '처음 이 반을 만든 선생님 구글 계정으로 다시 로그인해 주세요.'),
+        h('button', { class: 'btn', type: 'button', onclick: async () => { await store.signOut(); app.setSession(null); app.go('home'); } }, '로그아웃하고 처음으로')));
+      return;
+    }
     const first = !cls;
     cls = c;
     nameEl.textContent = c.name;

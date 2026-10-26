@@ -103,7 +103,7 @@ export function renderTeacher(app) {
     const answered = new Set(notices.map((n) => norm(n.q)));
     const groups = new Map();
     for (const s of searches) {
-      if (s.found) continue;
+      if (s.found || s.kind === 'translate') continue;
       const k = norm(s.q);
       if (!k || answered.has(k)) continue;
       const g = groups.get(k) || { key: k, q: s.q, who: new Set(), count: 0, at: 0 };
@@ -227,7 +227,10 @@ export function renderTeacher(app) {
       recent.length
         ? h('div', { class: 'feed' }, recent.map((s) => h('div', { class: 'feed-item' },
           h('span', { class: 'who' }, s.nickname),
-          h('span', { class: 'q' }, s.q, ' ', s.found ? h('span', { class: 'chip good' }, '찾음') : h('span', { class: 'chip warn' }, '못 찾음')),
+          h('span', { class: 'q' }, s.q, ' ',
+            s.kind === 'translate'
+              ? [h('span', { class: 'chip' }, '번역기'), s.en ? h('span', { class: 'en small' }, ` → ${s.en}`) : null]
+              : (s.found ? h('span', { class: 'chip good' }, '찾음') : h('span', { class: 'chip warn' }, '못 찾음'))),
           h('span', { class: 't' }, ago(s.at)))))
         : h('p', { class: 'muted small' }, '아이들이 ‘말 찾기’에서 검색하면 여기에 바로 보여요.'));
   }

@@ -410,3 +410,12 @@ table.board { border-collapse: separate; border-spacing: 0; width: 100%; min-wid
 .demo-link { border-color: var(--honey); background: var(--honey-soft); padding: 12px 16px; border-bottom: 1.5px solid var(--honey); }
 .board tr.demo-seat td.name { color: var(--honey); }
 a.btn { text-decoration: none; }
+
+/* 문장으로 바꿔 보기(번역기) */
+.translate-card { background: var(--soft); border-style: dashed; padding: 14px 16px; }
+.translate-card .phrase { background: var(--card); }
+
+/* 문장틀 옆 선생님 책 문장과 뜻 */
+.model-line { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; padding: 10px 14px; border-radius: 16px; background: var(--card); border: 1.5px dashed var(--line); }
+.model-line .en { font-size: 1.05rem; }
+.model-line .ko { flex-basis: 100%; color: var(--muted); font-size: 0.95rem; }

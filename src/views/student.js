@@ -5,6 +5,7 @@ import { search, norm, WORD_GROUPS, wordsInGroup } from '../lib/search.js';
 import { compressFile, openCamera, snapshot, startRecording } from '../lib/media.js';
 import { phraseCard, speakButtons, brandMark } from './parts.js';
 import { createBook } from './ebook.js';
+import { hasBuiltInTranslator, translateKoEn, papagoUrl, MAX_LEN } from '../lib/translate.js';
 
 const LEVELS = [['1', '쉽게'], ['2', '선생님 책처럼'], ['3', '도전']];
 const BLANK_RE = /___(?:\{([^}]*)\})?/;
@@ -154,6 +155,7 @@ export function renderStudent(app) {
     photoCleanup?.(); photoCleanup = null;
     const b = bookData();
     const pg = b.pages[page - 1];
+    const model = b.modelBook.find((x) => x.key === `p${page}`);
     const e = entryOf(page) || {};
     state = {
       level: e.level || '2',
@@ -198,6 +200,11 @@ export function renderStudent(app) {
         h('span', { class: 'chip' }, '생각해 보기'),
         h('span', { class: 'q' }, pg.q),
         h('span', { class: 'en muted small' }, pg.qEn)),
+      model ? h('div', { class: 'model-line' },
+        h('span', { class: 'chip' }, `선생님 책 ${page}쪽`),
+        h('span', { class: 'en', lang: 'en' }, model.en),
+        speakButtons(model.en, { slow: false }),
+        h('span', { class: 'ko' }, `뜻: ${model.ko}`)) : null,
       h('div', { class: 'card stack' },
         frameBox,
         h('div', { class: 'mine' },
@@ -347,7 +354,7 @@ export function renderStudent(app) {
   // ---------- 낱말 찾기 ----------
   let lastQuery = '';
   let browseGroup = null;
-  const qInput = h('input', { type: 'text', id: 'word-search', placeholder: '우리말로 찾기: 바닷가, 힘이 세다', autocomplete: 'off', 'aria-label': '낱말 찾기' });
+  const qInput = h('input', { type: 'text', id: 'word-search', placeholder: '낱말이나 하고 싶은 말: 바닷가, 가족이 생각나', autocomplete: 'off', 'aria-label': '낱말 찾기' });
   const results = h('div', { class: 'stack' });
 
   function wordCard(w) {
@@ -371,6 +378,9 @@ export function renderStudent(app) {
     const found = allWords.length + otherPhrases.length > 0;
     // "음식", "동물"처럼 묶음 이름으로 찾으면 그 묶음을 통째로 볼 수 있게 한다.
     const groupHit = WORD_GROUPS.find((g) => g.split('·').some((part) => norm(part) === norm(q)));
+    // 띄어 쓴 말("가족이 생각나")은 문장으로 말하고 싶은 것이라, 번역기 카드를 맨 위에 둔다.
+    const sentenceLike = /\s/.test(q.trim()) || q.trim().length >= 6;
+    const trTop = sentenceLike || !found;
     fill(results, 
       h('div', { class: 'row' },
         h('span', { class: 'sub-h' }, `‘${q}’`),
@@ -378,13 +388,75 @@ export function renderStudent(app) {
         h('button', { class: 'btn small ghost', type: 'button', onclick: () => { lastQuery = ''; qInput.value = ''; renderResults(); } }, icon('close', 14), '지우기')),
       found ? null : h('div', { class: 'banner' },
         '아직 사전에 없는 말이에요. 선생님 화면에 전해졌어요. 책에는 ', h('b', null, `★${q}`), ' 처럼 한글로 쓰고 넘어가요.'),
+      trTop ? translateCard(q) : null,
       found ? null : h('span', { class: 'sub-h' }, '더 짧은 말로 찾거나, 묶음에서 골라 봐요'),
       found ? null : h('div', { class: 'groups' }, WORD_GROUPS.map((g) => h('button', { class: 'btn small', type: 'button', onclick: () => { lastQuery = ''; browseGroup = g; renderResults(); } }, g))),
       allWords.length ? h('div', { class: 'word-list' }, allWords.map(wordCard)) : null,
       groupHit ? h('button', { class: 'btn small', type: 'button', onclick: () => { lastQuery = ''; qInput.value = ''; browseGroup = groupHit; renderResults(); } },
         `‘${groupHit}’ 낱말 모두 보기 (${wordsInGroup(groupHit).length}개)`) : null,
       otherPhrases.length ? h('span', { class: 'sub-h' }, '이런 표현도 있어요') : null,
-      otherPhrases.length ? h('div', { class: 'phrase-list' }, otherPhrases.map((p) => phraseCard(p, { onUse: insertText, youglish: !!cls?.youglish }))) : null);
+      otherPhrases.length ? h('div', { class: 'phrase-list' }, otherPhrases.map((p) => phraseCard(p, { onUse: insertText, youglish: !!cls?.youglish }))) : null,
+      trTop ? null : translateCard(q));
+  }
+
+  // ---------- 문장으로 바꿔 보기(번역기) ----------
+  function useSentence(en) {
+    if (tab !== 'page' || !ui) { toast('쪽을 먼저 골라요.'); return; }
+    state.free = en;
+    renderFrame();
+    queueSave();
+    ui.freeArea?.focus();
+    toast('내 문장에 넣었어요. 고치고 싶은 곳은 직접 고쳐요.');
+  }
+  // 바꾼 문장은 기억해 두어, 화면이 다시 그려져도 사라지지 않게 한다. (글 → 영어 문장, 실패하면 null)
+  const translated = new Map();
+  function translateCard(q) {
+    const text = q.slice(0, MAX_LEN);
+    const out = h('div', { class: 'stack', style: { gap: '8px' } });
+    const builtIn = hasBuiltInTranslator();
+    const log = (en) => store.logSearch(S.code, {
+      uid: S.uid, nickname: S.nickname, lesson, page: tab === 'page' ? page : null, q: text, found: !!en, kind: 'translate', en: en || null,
+    }).catch(() => {});
+    const papago = () => h('a', { class: 'btn small', href: papagoUrl(text), target: '_blank', rel: 'noopener' }, '파파고에서 보기');
+    function showResult(en) {
+      if (en === null) {
+        fill(out, h('p', { class: 'small muted' }, '이 브라우저에서는 바로 바꿀 수 없어요. 파파고로 열어 봐요.'), papago());
+        return;
+      }
+      fill(out, h('div', { class: 'phrase' },
+        h('div', { class: 'say' }, h('div', { class: 'native en', lang: 'en' }, h('span', { class: 'marker' }, en)), speakButtons(en)),
+        h('div', { class: 'ko' }, text),
+        h('div', { class: 'row' },
+          h('button', { class: 'btn small primary', type: 'button', onclick: () => useSentence(en) }, icon('plus', 16), '이 문장으로 쓰기'),
+          h('button', { class: 'btn small', type: 'button', onclick: () => insertText(en.replace(/[.!?]+$/, '')) }, '빈칸에 넣기'),
+          papago()),
+        h('p', { class: 'small muted' }, '번역기가 바꾼 문장이라 조금 어색할 수 있어요. 선생님 화면에도 보여서, 선생님이 더 좋은 말을 보내 줄 수도 있어요.')));
+    }
+    const go = h('button', {
+      class: 'btn small primary', type: 'button',
+      onclick: async () => {
+        if (!builtIn) { window.open(papagoUrl(text), '_blank', 'noopener'); log(null); return; }
+        go.disabled = true;
+        fill(out, h('p', { class: 'small muted', role: 'status' }, '바꾸는 중이에요… 처음 한 번은 번역기를 준비하느라 조금 걸려요.'));
+        let en = null;
+        try {
+          en = await translateKoEn(text, {
+            onProgress: (p) => fill(out, h('p', { class: 'small muted', role: 'status' }, `번역기 준비 중 ${Math.round(p * 100)}%`)),
+          }) || null;
+        } catch { en = null; }
+        go.disabled = false;
+        translated.set(text, en);
+        showResult(en);
+        log(en);
+      },
+    }, builtIn ? '번역기로 영어 문장 보기' : '파파고로 영어 문장 보기');
+    if (translated.has(text)) showResult(translated.get(text));
+    return h('div', { class: 'card translate-card stack' },
+      h('div', { class: 'row' }, h('b', null, '문장으로 말하고 싶을 때'), h('span', { class: 'spacer' }), go),
+      h('p', { class: 'small muted' }, builtIn
+        ? `‘${text}’을(를) 이 노트북 안에서 바로 영어 문장으로 바꿔요.`
+        : `‘${text}’을(를) 파파고 새 창에서 영어로 바꿔요. 크롬이나 엣지 최신판에서는 이 화면에서 바로 바뀌어요.`),
+      out);
   }
 
   function renderResults() {
@@ -408,7 +480,7 @@ export function renderStudent(app) {
 
   function renderFinder() {
     fill(finder, 
-      h('h2', null, '낱말 찾기'),
+      h('h2', null, '낱말·문장 찾기'),
       h('form', {
         role: 'search',
         onsubmit: (e) => {
